@@ -71,4 +71,43 @@ public class HomeController {
         // Look at the User.jsp file in /main/webapp/WEB-INF/jsp/ to see how the data is accessed
         return "User";
     }
+
+    // To call this method, enter "localhost:8080/user" into a browser
+    @RequestMapping(value = "/grimbill", method = RequestMethod.GET)
+    public String grimbill(Model model){
+
+        // Here we will show how to add attributes to a model and send it to the view
+
+        // Since this small example is for a user, let's create some attributes
+        // that users might usually have in a system
+        String name = "Grimbill";
+        String job  = "Grimbilsson";
+        String email = "grimbill@grombull.is";
+        String description = "most likely to die first in a zombie apocalypse.";
+
+
+        // Since we want our attributes regarding the user always in the same format,
+        // we are going to convert some strings using our StringManipulationService
+
+        // Let's assume that the name, job and description always have
+        // the first character in upper case
+        name = stringService.convertsFirstCharInStringToUpperCase(name);
+        job = stringService.convertsFirstCharInStringToUpperCase(job);
+        description = stringService.convertsFirstCharInStringToUpperCase(description);
+
+        // Let's assume that we always want e-mail in lower case
+        email = stringService.convertStringToLowerCase(email);
+
+
+        // Now let's add the attributes to the model
+        model.addAttribute("name",name);
+        model.addAttribute("job",job);
+        model.addAttribute("email",email);
+        model.addAttribute("description",description);
+
+        // By adding attributes to the model, we can pass information from the controller
+        // to the view (the .jsp file).
+        // Look at the User.jsp file in /main/webapp/WEB-INF/jsp/ to see how the data is accessed
+        return "Grimbill";
+    }
 }
