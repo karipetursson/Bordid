@@ -1,205 +1,87 @@
 <!DOCTYPE html>
-
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
-<!--
-Monochromed by TEMPLATED
-templated.co @templatedco
-Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
+
 <head>
-    <title>Monochromed by TEMPLATED</title>
+
+
     <%@ page contentType="text/html; charset=UTF-8" %>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
-    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/skel.min.js"></script>
-    <script src="js/skel-panels.min.js"></script>
-    <script src="js/init.js"></script>
-    <noscript>
-        <link rel="stylesheet" href="../../css/skel-noscript.css" />
-        <link rel="stylesheet" href="../../css/style.css" />
-    </noscript>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Borðið</title>
+
+    <script type="text/javascript" src="bootstrap/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="bootstrap/css/custom.css" rel="stylesheet">
+
 </head>
-<body class="homepage">
 
-<!-- Header -->
-<div id="header">
-    <div class="container">
-
-        <!-- Logo -->
-        <div id="logo">
-            <h1><a href="#">Borðið</a></h1>
-            <span>Fyrir svanga sem soltna</span>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Borðið</a>
         </div>
 
-        <!-- Nav -->
-        <nav id="nav">
-            <ul>
-                <li class="active"><a href="index.html">Homepage</a></li>
-                <li><a href="threecolumn.html">Two Sidebars</a></li>
-                <li><a href="twocolumn1.html">Left Sidebar</a></li>
-                <li><a href="twocolumn2.html">Right Sidebar</a></li>
-                <li><a href="onecolumn.html">No Sidebar</a></li>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="test">Veitingastaðir</a></li>
+                <li><a href="grimbill">Um borðið</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
             </ul>
-        </nav>
-
-    </div>
-</div>
-<!-- Header -->
-
-<!-- Main -->
-<div id="main">
-    <div class="container">
-        <header>
-            <h2>Gravida nibh quis urna</h2>
-        </header>
-        <div class="row">
-            <div class="3u">
-                <section>
-                    <a href="#" class="image full"><img src="../../images/pics01.jpg" alt="" /></a>
-                    <p>Quisque dictum. Pellentesque viverra  enim. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
-                    <a href="#" class="button">Read More</a>
-                </section>
-            </div>
-            <div class="3u">
-                <section>
-                    <a href="#" class="image full"><img src="../../images/pics11.jpg" alt="" /></a>
-                    <p>Pellentesque viverra  enim. Tristique ante ut risus. Quisque dictum. Integer sagittis convallis elementum.</p>
-                    <a href="#" class="button">Read More</a>
-                </section>
-            </div>
-            <div class="3u">
-                <section>
-                    <a href="#" class="image full"><img src="../../images/pics12.jpg" alt="" /></a>
-                    <p>Pellentesque viverra  enim. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum.</p>
-                    <a href="#" class="button">Read More</a>
-                </section>
-            </div>
-            <div class="3u">
-                <section>
-                    <a href="#" class="image full"><img src="../../images/pics13.jpg" alt="" /></a>
-                    <p>Tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis elementum.</p>
-                    <a href="#" class="button">Read More</a>
-                </section>
-            </div>
-        </div>
-        <div class="divider">&nbsp;</div>
-        <div class="row">
-
-            <!-- Content -->
-            <div class="8u skel-cell-important">
-                <section id="content">
-                    <header>
-                        <h2>Integer gravida nibh quis urna</h2>
-                        <span class="byline">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum</span>
-                    </header>
-                    <p><a href="#" class="image full"><img src="../../images/pics02.jpg" alt=""></a></p>
-                    <p>This is <strong>Monochromed</strong>, a responsive HTML5 site template freebie by <a href="http://templated.co">TEMPLATED</a>. Released for free under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so use it for whatever (personal or commercial) &ndash; just give us credit! Check out more of our stuff at <a href="http://templated.co">our site</a> or follow us on <a href="http://twitter.com/templatedco">Twitter</a>.</p>
-                    <a href="#" class="button">Read More</a>
-                </section>
-            </div>
-            <!-- /Content -->
-
-            <!-- Sidebar -->
-            <div id="sidebar" class="4u">
-                <section>
-                    <header>
-                        <h2>Gravida praesent</h2>
-                        <span class="byline">Praesent lacus congue rutrum</span>
-                    </header>
-                    <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum. Maecenas luctus lectus at sapien. Consectetuer adipiscing elit.</p>
-                    <ul class="default">
-                        <li><a href="#">Pellentesque quis lectus gravida blandit.</a></li>
-                        <li><a href="#">Lorem ipsum consectetuer adipiscing elit.</a></li>
-                        <li><a href="#">Phasellus nec nibh pellentesque congue.</a></li>
-                        <li><a href="#">Cras aliquam risus pellentesque pharetra.</a></li>
-                        <li><a href="#">Duis non metus commodo euismod lobortis.</a></li>
-                        <li><a href="#">Lorem ipsum dolor adipiscing elit.</a></li>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Settu inn leitarorð">
+                </div>
+                <button type="submit" class="btn btn-default">Leita</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
                     </ul>
-                </section>
-            </div>
-            <!-- Sidebar -->
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
 
-        </div>
-
-    </div>
+<div class="page-header">
+    <h1 class="text-center">Borðið <small>Fyrir svanga sem soltna</small></h1>
 </div>
-<!-- Main -->
 
-<!-- Footer -->
-<div id="footer">
-    <div class="container">
-        <div class="row">
-            <div class="3u">
-                <section>
-                    <ul class="style1">
-                        <li><img src="../../images/pics05.jpg" width="78" height="78" alt="">
-                            <p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-                            <p class="posted">August 11, 2014  |  (10 )  Comments</p>
-                        </li>
-                        <li><img src="../../images/pics06.jpg" width="78" height="78" alt="">
-                            <p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-                            <p class="posted">August 11, 2014  |  (10 )  Comments</p>
-                        </li>
-                        <li><img src="../../images/pics07.jpg" width="78" height="78" alt="">
-                            <p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-                            <p class="posted">August 11, 2014  |  (10 )  Comments</p>
-                        </li>
-                    </ul>
-                </section>
-            </div>
-            <div class="3u">
-                <section>
-                    <ul class="style1">
-                        <li class="first"><img src="../../images/pics08.jpg" width="78" height="78" alt="">
-                            <p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-                            <p class="posted">August 11, 2014  |  (10 )  Comments</p>
-                        </li>
-                        <li><img src="../../images/pics09.jpg" width="78" height="78" alt="">
-                            <p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-                            <p class="posted">August 11, 2014  |  (10 )  Comments</p>
-                        </li>
-                        <li><img src="../../images/pics10.jpg" width="78" height="78" alt="">
-                            <p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-                            <p class="posted">August 11, 2014  |  (10 )  Comments</p>
-                        </li>
-                    </ul>
-                </section>
-            </div>
-            <div class="6u">
-                <section>
-                    <header>
-                        <h2>Aenean elementum</h2>
-                    </header>
-                    <p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Pellentesque tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum congue, nibh. Suspendisse dictum porta lectus.</p>
-                    <ul class="default">
-                        <li><a href="#">Pellentesque quis lectus gravida blandit.</a></li>
-                        <li><a href="#">Lorem ipsum consectetuer adipiscing elit.</a></li>
-                        <li><a href="#">Phasellus nec nibh pellentesque congue.</a></li>
-                        <li><a href="#">Cras aliquam risus pellentesque pharetra.</a></li>
-                        <li><a href="#">Duis non metus commodo euismod lobortis.</a></li>
-                        <li><a href="#">Lorem ipsum dolor adipiscing elit.</a></li>
-                    </ul>
-                </section>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Footer -->
-
-<!-- Copyright -->
-<div id="copyright">
-    <div class="container">
-        Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
-    </div>
-</div>
 
 </body>
+
+
 </html>
