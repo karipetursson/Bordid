@@ -33,12 +33,6 @@ public class HomeController {
         return "Index";
     }
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public String test(Model model){
-
-        return "Test";
-    }
-
     // To call this method, enter "localhost:8080/user" into a browser
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     public String user(Model model){
