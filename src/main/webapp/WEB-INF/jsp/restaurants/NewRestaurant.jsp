@@ -27,11 +27,12 @@
             <td><sf:input path="name" type="text" placeholder="Enter name"/></td>
         </tr>
         <tr>
-            <td>Notes:</td>
+            <td>Description:</td>
                 <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-            <td><sf:textarea path="note" type="text" placeholder="Note text here"/></td>
+            <td><sf:textarea path="note" type="text" placeholder="Describe here"/></td>
         </tr>
     </table>
+
 
     <input type="submit" VALUE="Add new restaurant!"/>
 

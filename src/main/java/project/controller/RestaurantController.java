@@ -77,7 +77,7 @@ public class RestaurantController {
         model.addAttribute("restaurant",new Restaurant());
 
         // Return the view
-        return "restaurants/NewRestaurant";
+         return "restaurants/NewRestaurant";
     }
 
 
