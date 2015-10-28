@@ -13,27 +13,22 @@
 </head>
 <body>
 
-<h1><a href="/restaurant">Restaurants</a></h1>
+<h1><a href="/restaurants">All Restaurants</a></h1>
 
 <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
 <%--that is added to the model that is passed to the view.--%>
 <%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
-<sf:form method="POST" commandName="restaurant" action="/restaurant">
+<sf:form method="GET" commandName="restaurant" action="/restaurants">
 
     <table>
         <tr>
-            <td> Name:</td>
+            <td> Restaurant:</td>
                 <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
             <td><sf:input path="name" type="text" placeholder="Enter name"/></td>
         </tr>
-        <tr>
-            <td>Notes:</td>
-                <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-            <td><sf:textarea path="note" type="text" placeholder="Note text here"/></td>
-        </tr>
     </table>
 
-    <input type="submit" VALUE="Add new restaurant!"/>
+    <input type="submit" VALUE="Search!"/>
 
 </sf:form>
 
@@ -53,7 +48,7 @@
                         <%--it in the singular item var, and then just a dot followed by the attribute name--%>
 
                         <%--Create a link based on the name attribute value--%>
-                    <td><a href="/restaurant/${restaurant.name}">${restaurant.name}</a></td>
+                    <td><a href="/restaurants/${restaurant.name}">${restaurant.name}</a></td>
                         <%--The String in the note attribute--%>
                     <td>${restaurant.note}</td>
                 </tr>
@@ -63,7 +58,7 @@
 
     <%--If all tests are false, then do this--%>
     <c:otherwise>
-        <h3>No restaurants!</h3>
+        <h3>We have no restaurants!</h3>
     </c:otherwise>
 </c:choose>
 
