@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by IngviÞór on 27/10/2015.
  */
-public interface RestaurantRepository {
+public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 
     Restaurant save(Restaurant restaurant);
 

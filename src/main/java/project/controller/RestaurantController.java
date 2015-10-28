@@ -13,6 +13,7 @@ import project.service.RestaurantService;
 /**
  * Created by IngviÞór on 27/10/2015.
  */
+@Controller
 public class RestaurantController {
 
     // Instance Variables
@@ -27,7 +28,7 @@ public class RestaurantController {
     // Method that returns the correct view for the URL /postit
     // This handles the GET request for this URL
     // Notice the `method = RequestMethod.GET` part
-    @RequestMapping(value = "/restaurant", method = RequestMethod.GET)
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String restaurantViewGet(Model model){
 
         // Add a new Postit Note to the model for the form
@@ -39,7 +40,7 @@ public class RestaurantController {
         model.addAttribute("restaurants",restaurantService.findAllReverseOrder());
 
         // Return the view
-        return "restaurants/Restaurants";
+        return "restaurants/NewRestaurant";
     }
 
     // Method that receives the POST request on the URL /postit
@@ -48,7 +49,7 @@ public class RestaurantController {
     // we can save the postit note because we get the data that was entered
     // into the form.
     // Notice the `method = RequestMethod.POST` part
-    @RequestMapping(value = "/restaurant", method = RequestMethod.POST)
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String postitNoteViewPost(@ModelAttribute("restaurant") Restaurant restaurant,
                                      Model model){
 
@@ -64,7 +65,7 @@ public class RestaurantController {
         model.addAttribute("restaurant", new Restaurant());
 
         // Return the view
-        return "restaurants/Restaurants";
+        return "restaurants/NewRestaurant";
     }
 
     // Method that returns the correct view for the URL /postit/{name}

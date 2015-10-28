@@ -9,7 +9,7 @@ import project.service.PostitNoteService;
 import java.util.Collections;
 import java.util.List;
 
-//@Service
+@Service
 public class PostitNoteServiceImplementation implements PostitNoteService {
 
     // Instance Variables

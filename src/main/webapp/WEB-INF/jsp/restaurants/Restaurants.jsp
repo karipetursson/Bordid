@@ -7,7 +7,7 @@
 <html lang="en">
 
 <head>
-    <title>Restaurants</title>
+    <title>All Restaurants</title>
 
     <link href="css/postitnote.css" rel="stylesheet">
 </head>
