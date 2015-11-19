@@ -14,16 +14,18 @@ public class Restaurant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String note;
+    private String location;
+    private String description;
 
     // Notice the empty constructor, because we need to be able to create an empty PostitNote to add
     // to our model so we can use it with our form
     public Restaurant() {
     }
 
-    public Restaurant(String name, String note) {
+    public Restaurant(String name, String location, String description) {
         this.name = name;
-        this.note = note;
+        this.location = location;
+        this.description = description;
     }
 
     public Long getId() {
@@ -42,19 +44,23 @@ public class Restaurant {
         this.name = name;
     }
 
-    public String getNote() {
-        return note;
+    public String getLocation() { return location; }
+
+    public void setLocation(String location) { this.location = location; }
+
+    public String getDescription() {
+        return description;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setDescription(String note) {
+        this.description = note;
     }
 
     // This is for easier debug.
     @Override
     public String toString() {
         return String.format(
-                "Restaurant[name=%s, note=%s]",
-                name,note);
+                "Restaurant[name=%s, location=%s, description=%s]",
+                name,location,description);
     }
 }

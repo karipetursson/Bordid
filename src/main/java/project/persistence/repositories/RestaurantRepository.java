@@ -27,7 +27,7 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
     // We could have used this method by adding the words
     // ByOrderByIdDesc, which mean: Order By Id in a Descending order
     //
-    List<Restaurant> findAllByOrderByIdDesc();
+    List<Restaurant> findAllByOrderByNameAsc();
 
     Restaurant findOne(Long id);
 

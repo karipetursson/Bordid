@@ -18,7 +18,7 @@
 <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
 <%--that is added to the model that is passed to the view.--%>
 <%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
-<sf:form method="GET" commandName="restaurant" action="/restaurants">
+<sf:form method="POST" commandName="restaurant" action="/restaurants">
 
     <table>
         <tr>
@@ -50,7 +50,9 @@
                         <%--Create a link based on the name attribute value--%>
                     <td><a href="/restaurants/${restaurant.name}">${restaurant.name}</a></td>
                         <%--The String in the note attribute--%>
-                    <td>${restaurant.note}</td>
+                    <td>${restaurant.location}</td>
+
+                    <td>${restaurant.description}</td>
                 </tr>
             </c:forEach>
         </table>

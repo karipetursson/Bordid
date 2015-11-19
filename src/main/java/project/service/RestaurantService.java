@@ -31,6 +31,9 @@ public interface RestaurantService {
      */
     List<Restaurant> findAllReverseOrder();
 
+
+    List<Restaurant> findAllAlphabetical();
+
     /**
      * Find a {@link Restaurant} based on {@link Long id}
      * @param id {@link Long}

@@ -40,8 +40,11 @@ public class RestaurantServiceImplementation implements RestaurantService {
     }
 
     @Override
+    public List<Restaurant> findAllAlphabetical() { return repository.findAllByOrderByNameAsc();}
+
+    @Override
     public List<Restaurant> findAllReverseOrder() {
-        // Get all the Postit notes
+
         List<Restaurant> restaurants = repository.findAll();
 
         // Reverse the list

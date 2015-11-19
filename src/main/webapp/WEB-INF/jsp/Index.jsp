@@ -38,8 +38,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="/add">Add New Restaurant</a></li>
-                <li><a href="/restaurants">Search For Restaurant</a></li>
+                <li><a href="/addNewRestaurant">Add New Restaurant</a></li>
+                <li><a href="/restaurants">All Restaurants</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
