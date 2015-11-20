@@ -54,6 +54,8 @@
                     <td>${restaurant.location}</td>
 
                     <td>${restaurant.description}</td>
+
+                    <td><a href="/bookRestaurant/${restaurant}">Book</td>
                 </tr>
             </c:forEach>
         </table>
