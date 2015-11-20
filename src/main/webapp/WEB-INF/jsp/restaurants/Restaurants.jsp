@@ -11,7 +11,8 @@
 
     <link href="css/postitnote.css" rel="stylesheet">
 </head>
-<body>
+
+<a href="/">Homepage</a>
 
 <h1><a href="/restaurants">All Restaurants</a></h1>
 
@@ -28,7 +29,7 @@
         </tr>
     </table>
 
-    <input type="submit" VALUE="Search!"/>
+<input type="submit" VALUE="Search!"/>
 
 </sf:form>
 

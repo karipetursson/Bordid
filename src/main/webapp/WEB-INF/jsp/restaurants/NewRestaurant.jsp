@@ -13,6 +13,8 @@
 </head>
 <body>
 
+<a href="/">Homepage</a>
+
 <h1>Add New Restaurant</h1>
 
 <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
