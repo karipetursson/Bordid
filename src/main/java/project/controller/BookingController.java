@@ -71,7 +71,7 @@ public class BookingController {
     // This method finds all Postit Notes posted by someone with the requested {name}
     // and returns a list with all those Postit Notes.
     @RequestMapping(value = "/bookRestaurant/{name}_{location}", method = RequestMethod.GET)
-    public String BookingGetNotesFromName(@PathVariable String name,
+    public String BookingGetNotesFromName(@PathVariable String name, @PathVariable String location,
                                              Model model){
 
         // Get all Postit Notes with this name and add them to the model

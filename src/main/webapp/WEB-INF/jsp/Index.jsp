@@ -40,6 +40,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="/addNewRestaurant">Add New Restaurant</a></li>
                 <li><a href="/restaurants">All Restaurants</a></li>
+                <li><a href="/bookings">All Bookings</a></li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">

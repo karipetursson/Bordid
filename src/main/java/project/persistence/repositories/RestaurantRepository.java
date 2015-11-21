@@ -21,7 +21,7 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
     // then we can write it quite easily with the @Query notation, like you see below.
     // This method returns all PostitNotes where the length of the name is equal or greater than 3 characters.
     //@Query(value = "SELECT p FROM Restaurant p where length(p.name) >= 3 ")
-    List<Restaurant> findAllWithNameLongerThan3Chars();
+    //List<Restaurant> findAllWithNameLongerThan3Chars();
 
     // Instead of the method findAllReverseOrder() in PostitNoteService.java,
     // We could have used this method by adding the words
