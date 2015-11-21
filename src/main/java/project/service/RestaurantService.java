@@ -31,6 +31,7 @@ public interface RestaurantService {
      */
     List<Restaurant> findAllReverseOrder();
 
+    List<Restaurant> findByNameAndLocation(String name, String location);
 
     List<Restaurant> findAllAlphabetical();
 

@@ -25,18 +25,16 @@ public class RestaurantController {
         this.restaurantService = restaurantService;
     }
 
-    // Method that returns the correct view for the URL /postit
+    // Method that returns the correct view for the URL /restaurants
     // This handles the GET request for this URL
     // Notice the `method = RequestMethod.GET` part
     @RequestMapping(value = "/restaurants", method = RequestMethod.GET)
     public String restaurantsViewGet(Model model){
 
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in PostitNotes.jsp, you can see that we
-        // reference this attribute there by the name `postitNote`.
+        // Add a new Restaurant to the model for the form
         model.addAttribute("restaurant",new Restaurant());
 
-        // Here we get all the Postit Notes (in a reverse order) and add them to the model
+        // Get all restaurants in alphabetical order
         model.addAttribute("restaurants",restaurantService.findAllAlphabetical());
 
         // Return the view
@@ -45,18 +43,17 @@ public class RestaurantController {
 
 
     // Method that searches within the restaurant view
-
     @RequestMapping(value = "/restaurants", method = RequestMethod.POST)
     public String restaurantsViewPost(@ModelAttribute("restaurant") Restaurant restaurant,
                               Model model){
 
+        // Get the name from the passed in "dummy" Restaurant object
         String searchName = restaurant.getName();
 
+        // Use that name to find all restaurants with the same name
         model.addAttribute("restaurants", restaurantService.findByName(searchName));
 
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in PostitNotes.jsp, you can see that we
-        // reference this attribute there by the name `postitNote`.
+        // I'm not sure if we need this.. Tried commenting out and nothing changed
         model.addAttribute("restaurant", new Restaurant());
 
         // Return the view
@@ -64,18 +61,13 @@ public class RestaurantController {
     }
 
 
-    // Method that returns the correct view for the URL /postit/{name}
-    // The {name} part is a Path Variable, and we can reference that in our method
-    // parameters as a @PathVariable. This enables us to create dynamic URLs that are
-    // based on the data that we have.
-    // This method finds all Postit Notes posted by someone with the requested {name}
-    // and returns a list with all those Postit Notes.
-    @RequestMapping(value = "/restaurants/{name}", method = RequestMethod.GET)
-    public String restaurantGetNotesFromName(@PathVariable String name,
+    // Method that gives detailed info about a certain restaurant
+    @RequestMapping(value = "/restaurants/{name}_{location}", method = RequestMethod.GET)
+    public String restaurantGetNotesFromName(@PathVariable String name, @PathVariable String location,
                                              Model model){
 
         // Get all Postit Notes with this name and add them to the model
-        model.addAttribute("restaurants", restaurantService.findByName(name));
+        model.addAttribute("restaurants", restaurantService.findByNameAndLocation(name, location));
 
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we

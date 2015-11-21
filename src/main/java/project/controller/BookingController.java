@@ -46,7 +46,7 @@ public class BookingController {
 
     // Method that searches within the Booking view
 
-    @RequestMapping(value = "/Bookings", method = RequestMethod.POST)
+    @RequestMapping(value = "/bookings", method = RequestMethod.POST)
     public String BookingsViewPost(@ModelAttribute("Booking") Booking booking,
                                       Model model){
 
@@ -70,7 +70,7 @@ public class BookingController {
     // based on the data that we have.
     // This method finds all Postit Notes posted by someone with the requested {name}
     // and returns a list with all those Postit Notes.
-    @RequestMapping(value = "/Bookings/{name}", method = RequestMethod.GET)
+    @RequestMapping(value = "/bookRestaurant/{name}_{location}", method = RequestMethod.GET)
     public String BookingGetNotesFromName(@PathVariable String name,
                                              Model model){
 
@@ -83,7 +83,7 @@ public class BookingController {
         model.addAttribute("Booking", new Booking());
 
         // Return the view
-        return "Bookings/Bookings";
+        return "bookings/BookRestaurant";
     }
 
 

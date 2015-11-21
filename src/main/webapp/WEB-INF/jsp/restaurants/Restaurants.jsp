@@ -12,6 +12,8 @@
     <link href="css/postitnote.css" rel="stylesheet">
 </head>
 
+<body>
+
 <a href="/">Homepage</a>
 
 <h1><a href="/restaurants">All Restaurants</a></h1>
@@ -49,13 +51,13 @@
                         <%--it in the singular item var, and then just a dot followed by the attribute name--%>
 
                         <%--Create a link based on the name attribute value--%>
-                    <td><a href="/restaurants/${restaurant.name}">${restaurant.name}</a></td>
+                    <td><a href="/restaurants/${restaurant.name}_${restaurant.location}">${restaurant.name}</a></td>
                         <%--The String in the note attribute--%>
                     <td>${restaurant.location}</td>
 
                     <td>${restaurant.description}</td>
 
-                    <td><a href="/bookRestaurant/${restaurant}">Book</td>
+                    <td><a href="/bookRestaurant/${restaurant.name}_${restaurant.location}">Book</a></td>
                 </tr>
             </c:forEach>
         </table>
