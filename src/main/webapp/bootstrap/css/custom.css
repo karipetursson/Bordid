@@ -2739,6 +2739,10 @@ input[type="button"]:disabled,
     background: #f5f5f5;
 }
 
+.wrapper.style11 {
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #F5F5F5), color-stop(100, #3A3347));
+}
+
 .wrapper.style2 {
     background: #e98b6c;
     color: #fbede8;
@@ -3103,13 +3107,15 @@ body.landing #page-wrapper {
 /* Footer */
 
 #footer {
-    background: #ececec;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #3A3347), color-stop(100, #F5F5F5));
+    /*background: #ececec;*/
     color: #aaa;
     padding: 4em 0 8em 0;
     text-align: center;
 }
 
 #footer .copyright {
+    color: #543930;
     font-size: 0.9em;
     margin: 2em 0 0 0;
     padding: 0;
@@ -3120,7 +3126,7 @@ body.landing #page-wrapper {
 }
 
 #footer .menu a {
-    color: inherit;
+    color: #543930;
     text-decoration: none;
 }
 
@@ -3665,7 +3671,7 @@ body.landing #page-wrapper {
     vertical-align: middle;
     /*background: #3a3347;*/
     margin: 0 auto;
-    color: #fff;
+    /*color: #fff;*/
 }
 .featurette-inner {
     display: table-cell;
@@ -3706,5 +3712,99 @@ body.landing #page-wrapper {
         right: 0;
         width: auto;
         margin: 0;
+    }
+
+    #newRestForm{
+        max-width: 75%;
+        padding: 19px 29px 29px;
+        margin: 0 auto;
+        opacity: 0.9;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+    }
+    form
+    {
+        max-width: 75%;
+        padding: 19px 29px 29px;
+        margin: 0 auto;
+        opacity: 0.9;
+        /*background-color: #fff;
+        border: 1px solid #e5e5e5;*/
+
+
+
+        /* Sets the rounded corners*/
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        box-shadow: 0 1px 2px rgba(0,0,0,.05);
+
+
+
+
+    }
+
+    .form-horizontal .control-label
+    {
+
+        text-align: left;
+    }
+
+    .controls .radio
+    {
+
+        padding: 5px;
+
+    }
+
+    #female
+    {
+        display: inline-block;
+        float: right;
+        padding-right: 2em;
+    }
+
+    #male
+    {
+        display:inline-block;
+        float: left;
+        padding-left: 2em;
+    }
+
+    .control-group-check input
+    {
+        float: left;
+    }
+
+    .control-group-check label
+    {
+        float: left;
+        padding-right: 2em;
+
+    }
+
+    .control-group-check
+    {
+        margin-bottom: 2em;
+
+        overflow: hidden;
+    }
+
+    .controls p
+    {
+        display:inline
+    }
+
+    textarea
+    {
+        display: inline;
+    }
+
+    #result
+    {
+        float: right;
     }
 }

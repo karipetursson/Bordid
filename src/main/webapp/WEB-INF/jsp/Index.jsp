@@ -27,16 +27,16 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='../../css/postitnote.css'/> ">
 
 </head>
-
+<body>
 <!-- Header -->
 <header id="header" class="alt">
     <h1><a href="/">Borðið</a></h1>
     <nav id="nav">
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/addNewRestaurant">Add New Restaurant</a></li>
-            <li><a href="/restaurants">All Restaurants</a></li>
-            <li><a href="/bookings">Bookings</a></li>
+                    <li><a href="/addNewRestaurant">New Restaurant</a></li>
+                    <li><a href="/restaurants">Restaurants</a></li>
+                    <li><a href="/bookings">Bookings</a></li>
+
             <li><a href="/about">About</a></li>
         </ul>
     </nav>
@@ -46,7 +46,7 @@
     <h2>Borðið</h2>
     <p>Finnið - Bókið - Borðið</p>
     <ul class="actions">
-        <li><a href="#" class="button">Meira</a></li>
+        <li><a href="#one" class="button " class="more scrolly">Meira</a></li>
     </ul>
     <div class="featurette">
         <div class="featurette-inner text-center">
@@ -65,7 +65,7 @@
     </div>
 </section>
 <!-- One -->
-<div class="wrapper style1">
+<div id="one" class="wrapper style1">
     <section class="container">
         <header class="major">
             <h2>Veitingastaðirnir</h2>
@@ -176,9 +176,6 @@
         &copy; Bordid. All rights reserved.
     </div>
 </footer>
-
-</div>
-
 
 </body>
 
