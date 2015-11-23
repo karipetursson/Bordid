@@ -48,43 +48,7 @@
     </nav>
 </header>
 
-<sf:form method="POST" commandName="booking" action="/bookingConfirmation">
-
-    <table>
-        <tr>
-            <td>Restaurant name:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-            <td><sf:input path="restaurantName" type="text" placeholder="Enter restaurant name" value="${name}"/></td>
-        </tr>
-        <tr>
-            <td>Full name:</td>
-                <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-            <td><sf:input path="customerName" type="text" placeholder="Enter full name"/></td>
-        </tr>
-        <tr>
-            <td>E-mail:</td>
-                <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-            <td><sf:input path="email" type="text" placeholder="Enter your e-mail"/></td>
-        </tr>
-        <tr>
-            <td>Date:</td>
-            <td>
-                <script>
-                    $(function() {
-                        $( "#datepicker" ).datepicker();
-                    });
-                </script>
-
-                Date: <sf:input path="date" type="text" id="datepicker"/>
-            </td>
-        </tr>
-
-    </table>
-
-    <input type="submit" VALUE="Book a table"/>
-
-</sf:form>
+<p>Congratulations, you have booked a table at ${booking.restaurantName}</p>
 
 </body>
-
 </html>

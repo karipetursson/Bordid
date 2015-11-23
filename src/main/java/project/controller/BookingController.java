@@ -112,7 +112,7 @@ public class BookingController {
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we
         // reference this attribute there by the name `postitNote`.
-        model.addAttribute("booking", new Booking());
+        model.addAttribute("booking", booking);
 
         // Return the view
         return "bookings/BookingConfirmed";
@@ -123,6 +123,8 @@ public class BookingController {
                                         Model model){
 
         model.addAttribute("name", name);
+
+        model.addAttribute("booking", new Booking());
 
         // Return the view
         return "bookings/BookRestaurant";

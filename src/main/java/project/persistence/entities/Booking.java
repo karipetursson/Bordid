@@ -13,8 +13,10 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String customerName;
     private String restaurantName;
+    private String customerName;
+    private String email;
+    private String date;
 
     // Notice the empty constructor, because we need to be able to create an empty PostitNote to add
     // to our model so we can use it with our form
@@ -45,4 +47,20 @@ public class Booking {
     public String getRestaurantName() { return this.restaurantName; }
 
     public void setRestaurantName(String restaurantName) { this.restaurantName = restaurantName; }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 }
