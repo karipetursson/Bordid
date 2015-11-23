@@ -25,9 +25,7 @@ public class RestaurantController {
         this.restaurantService = restaurantService;
     }
 
-    // Method that returns the correct view for the URL /restaurants
-    // This handles the GET request for this URL
-    // Notice the `method = RequestMethod.GET` part
+
     @RequestMapping(value = "/restaurants", method = RequestMethod.GET)
     public String restaurantsViewGet(Model model){
 

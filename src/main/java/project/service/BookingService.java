@@ -14,4 +14,8 @@ public interface BookingService {
 
     List<Booking> findByRestaurantName(String restaurantName);
 
+    List<Booking> findByCustomerNameOrRestaurantName(String customerName, String restaurantName);
+
+    List<Booking> findAll();
+
 }
