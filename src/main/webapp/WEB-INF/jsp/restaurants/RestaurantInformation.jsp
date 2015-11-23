@@ -15,20 +15,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <title>Restaurants</title>
+    <title>All Restaurants</title>
+
+    <link rel="stylesheet" type="text/css" href="<c:url value='../../../css/postitnote.css'/> ">
 
     <script type="text/javascript" src="bootstrap/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="<c:url value='../../../bootstrap/css/bootstrap.min.css'/> ">
+    <link rel="stylesheet" type="text/css" href="<c:url value='../../../bootstrap/css/bootstrap-theme.min.css'/> ">
+    <link rel="stylesheet" type="text/css" href="<c:url value='../../../bootstrap/css/custom.css'/> ">
 
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="bootstrap/css/custom.css" rel="stylesheet">
 
-    <link href="css/postitnote.css" rel="stylesheet">
 </head>
+
 <body>
 
 <nav class="navbar navbar-default">
@@ -64,49 +64,78 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-<h1>Add New Restaurant</h1>
-
 <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
 <%--that is added to the model that is passed to the view.--%>
 <%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
-<sf:form method="POST" commandName="restaurant" action="/addNewRestaurant">
+<sf:form method="POST" commandName="restaurant" action="/restaurants">
 
     <table>
         <tr>
-            <td> Name:</td>
+            <td> Restaurant:</td>
                 <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
             <td><sf:input path="name" type="text" placeholder="Enter name"/></td>
         </tr>
-        <tr>
-            <td>Address:</td>
-                <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-            <td><sf:input path="address" type="text" placeholder="Enter address"/></td>
-        </tr>
-        <tr>
-            <td>Location:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-            <td><sf:input path="location" type="text" placeholder="Enter location"/></td>
-        </tr>
-        <tr>
-            <td>Short Description:</td>
-                <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-            <td><sf:textarea path="shortDescription" type="text" placeholder="Enter short description"/></td>
-        </tr>
-        <tr>
-            <td>Long Description:</td>
-                <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-            <td><sf:textarea path="longDescription" type="text" placeholder="Enter long description"/></td>
-        </tr>
-        <tr>
-            <td>Link to homepage:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-            <td><sf:input path="linkToHomepage" type="text" placeholder="Enter link to homepage"/></td>
-        </tr>
     </table>
 
-    <input type="submit" VALUE="Add new restaurant"/>
+    <input type="submit" VALUE="Search!"/>
 
 </sf:form>
+
+<%--Choose what code to generate based on tests that we implement--%>
+<c:choose>
+    <%--If the model has an attribute with the name `postitNotes`--%>
+    <c:when test="${not empty restaurants}">
+        <%--Create a table for the Postit Notes--%>
+        <table class="table">
+
+                <%--For each postit note, that is in the list that was passed in the model--%>
+                <%--generate a row in the table--%>
+                <%--Here we set `postit` as a singular item out of the list `postitNotes`--%>
+            <c:forEach var="restaurant" items="${restaurants}">
+                <tr>
+                        <%--We can reference attributes of the Entity by just entering the name we gave--%>
+                        <%--it in the singular item var, and then just a dot followed by the attribute name--%>
+
+                        <%--Create a link based on the name attribute value--%>
+                    <td><a href="/restaurants/${restaurant.name}">${restaurant.name}</a></td>
+                        <%--The String in the note attribute--%>
+                    <td>${restaurant.address}</td>
+
+                    <td>${restaurant.location}</td>
+
+                    <td>${restaurant.longDescription}</td>
+
+                    <td><a href="/bookRestaurant/${restaurant.name}">Book</a></td>
+                </tr>
+            </c:forEach>
+
+
+        </table>
+
+        <div>
+
+            <c:forEach var="restaurant" items="${restaurants}">
+
+                <div>
+
+                    <h3>${restaurant.name}</h3>
+
+                    <p>${restaurant.address}</p>
+
+                    <p>${restaurant.location}</p>
+
+                </div>
+
+            </c:forEach>
+
+        </div>
+    </c:when>
+
+    <%--If all tests are false, then do this--%>
+    <c:otherwise>
+        <h3>We have no restaurants!</h3>
+    </c:otherwise>
+</c:choose>
 
 </body>
 </html>

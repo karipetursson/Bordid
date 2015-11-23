@@ -4,6 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 
+<html lang="en">
 
 <head>
 
@@ -14,7 +15,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <title>Borðið</title>
+    <title>All Restaurants</title>
+
+    <link rel="stylesheet" type="text/css" href="<c:url value='../../../css/postitnote.css'/> ">
 
     <script type="text/javascript" src="bootstrap/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
@@ -25,26 +28,26 @@
 
 
 </head>
+
+<body>
+
 <!-- Header -->
 <header id="header" class="alt">
     <h1><a href="/">Borðið</a></h1>
     <nav id="nav">
         <ul>
-            <li><a href="/addNewRestaurant">New Restaurant</a></li>
-            <li><a href="/restaurants">Restaurants</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/addNewRestaurant">Add New Restaurant</a></li>
+            <li><a href="/restaurants">All Restaurants</a></li>
             <li><a href="/bookings">Bookings</a></li>
-
             <li><a href="/about">About</a></li>
         </ul>
     </nav>
 </header>
 
-
 <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
 <%--that is added to the model that is passed to the view.--%>
 <%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
-
-<div class="wrapper style11">
 <sf:form method="POST" commandName="restaurant" action="/restaurants">
 
     <table>
@@ -155,22 +158,6 @@
         <h3>We have no restaurants!</h3>
     </c:otherwise>
 </c:choose>
-</div>
-
-<!-- Footer -->
-<footer id="footer">
-    <ul class="menu">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Terms of Use</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Contact Us</a></li>
-    </ul>
-    <div class="copyright">
-        &copy; Bordid. All rights reserved.
-    </div>
-</footer>
 
 </body>
-
-
 </html>

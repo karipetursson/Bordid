@@ -25,7 +25,7 @@ public class RestaurantController {
         this.restaurantService = restaurantService;
     }
 
-
+    //
     @RequestMapping(value = "/restaurants", method = RequestMethod.GET)
     public String restaurantsViewGet(Model model){
 
@@ -73,7 +73,7 @@ public class RestaurantController {
         model.addAttribute("restaurant", new Restaurant());
 
         // Return the view
-        return "restaurants/RestaurantInfo";
+        return "restaurants/RestaurantInformation";
     }
 
 
