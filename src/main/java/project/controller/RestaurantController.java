@@ -63,7 +63,7 @@ public class RestaurantController {
 
     // Method that gives detailed info about a certain restaurant
     @RequestMapping(value = "/restaurantInfo/{name}", method = RequestMethod.GET)
-    public String restaurantGetNotesFromName(@PathVariable String name,
+    public String restaurantInfoViewGet(@PathVariable String name,
                                              Model model){
 
         // Get all Postit Notes with this name and add them to the model

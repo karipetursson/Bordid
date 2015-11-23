@@ -20,6 +20,9 @@
     <script type="text/javascript" src="bootstrap/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="bootstrap/css/custom.css" rel="stylesheet">
@@ -100,7 +103,6 @@
             <td><sf:input path="linkToHomepage" type="text" placeholder="Enter link to homepage"/></td>
         </tr>
     </table>
-
 
     <input type="submit" VALUE="Add new restaurant"/>
 

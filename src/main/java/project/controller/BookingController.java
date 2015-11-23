@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import project.persistence.entities.Booking;
+import project.persistence.entities.Restaurant;
 import project.service.BookingService;
 
 /**
@@ -99,30 +100,31 @@ public class BookingController {
         model.addAttribute("Booking",new Booking());
 
         // Return the view
-        return "Bookings/NewBooking";
+        return "bookings/NewBooking";
     }
 
+    @RequestMapping(value = "/bookingConfirmation", method = RequestMethod.POST)
+    public String bookingConfirmationViewGet(@ModelAttribute("booking") Booking booking,
+                                   Model model){
 
-    // Method that receives the POST request on the URL /postit
-    // and receives the ModelAttribute("postitNote")
-    // That attribute is the attribute that is mapped to the form, so here
-    // we can save the postit note because we get the data that was entered
-    // into the form.
-    // Notice the `method = RequestMethod.POST` part
-
-    @RequestMapping(value = "/addNewBooking", method = RequestMethod.POST)
-    public String addViewPost(@ModelAttribute("Booking") Booking Booking,
-                              Model model){
-
-        // Save the Postit Note that we received from the form
-        bookingService.save(Booking);
+        bookingService.save(booking);
 
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we
         // reference this attribute there by the name `postitNote`.
-        model.addAttribute("Booking", new Booking());
+        model.addAttribute("booking", new Booking());
 
         // Return the view
-        return "Bookings/NewBooking";
+        return "bookings/BookingConfirmed";
+    }
+
+    @RequestMapping(value = "/bookRestaurant/{name}", method = RequestMethod.GET)
+    public String bookRestaurantViewGet(@PathVariable String name,
+                                        Model model){
+
+        model.addAttribute("name", name);
+
+        // Return the view
+        return "bookings/BookRestaurant";
     }
 }

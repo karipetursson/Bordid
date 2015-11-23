@@ -25,6 +25,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     margin: 0;
     padding: 0;
     border: 0;
+
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
@@ -3042,7 +3043,7 @@ body.landing #page-wrapper {
 
 #banner {
     background-color: #3a3347;
-    background-image: url("images/banner.svg");
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #3A3347), color-stop(100, #F5F5F5));
     background-position: 25% bottom;
     background-repeat: repeat-x;
     background-size: 1500px 300px;
@@ -3651,51 +3652,59 @@ body.landing #page-wrapper {
     }
 
     /* ------ featurette */
-    .featurette {
-        display: table;
-        width: 75%;
-        height: 30%; /* set a pixel height and then remove the body,html height */
-        vertical-align: middle;
-        background: #555;
-        color: #fff;
+    .form-control{
+        width: 15%;
     }
-    .featurette-inner {
-        display: table-cell;
-        vertical-align: middle;
-    }
-    .featurette .search {
-        padding: 3%;
-        max-width: 65%; /*max width of search*/
-        margin: 0 auto;
-    }
-    .no-margin-top {
-        margin-top: 0
-    }
+}
+
+/* ------ featurette */
+.featurette {
+    display: table;
+    width: 50%;
+    height: 30%; /* set a pixel height and then remove the body,html height */
+    vertical-align: middle;
+    /*background: #3a3347;*/
+    margin: 0 auto;
+    color: #fff;
+}
+.featurette-inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+.featurette .search {
+    padding: 3%;
+    max-width: 980px; /*max width of search*/
+    margin: 0 auto;
+}
+.no-margin-top {
+    margin-top: 0
+}
 
 
-    /* ------ form-control-lg */
-    .form-control-lg {
-        min-height: 46px;
-        border-radius: 6px;
-        font-size: 18px;
-        line-height: normal;
+/* ------ form-control-lg */
+.form-control-lg {
+    min-height: 46px;
+    border-radius: 6px;
+    font-size: 18px;
+    line-height: normal;
+}
+
+
+/* ------ disjointed form group custom */
+.featurette .search.has-button .btn {
+    margin-top: 5px;
+    width: 100%;
+}
+@media (min-width:480px) {
+    .featurette .search.has-button .form-group {
+        position: relative;
+        padding-right: 99px; /*space for button*/
     }
-
-
-    /* ------ disjointed form group custom */
     .featurette .search.has-button .btn {
-        margin-top: 5px;
-        width: 75%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: auto;
+        margin: 0;
     }
-    @media (min-width:480px) {
-        .featurette .search.has-button .form-group {
-            position: relative;
-            padding-right: 99px; /*space for button*/
-        }
-        .featurette .search.has-button .btn {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: auto;
-            margin: 0;
-        }
+}

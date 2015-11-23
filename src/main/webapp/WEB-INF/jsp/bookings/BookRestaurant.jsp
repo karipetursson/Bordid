@@ -7,43 +7,47 @@
 <html lang="en">
 
 <head>
-    <title>Book a Restaurant</title>
 
-    <link href="css/postitnote.css" rel="stylesheet">
+    <%@ page contentType="text/html; charset=UTF-8" %>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>All Restaurants</title>
+
+    <link rel="stylesheet" type="text/css" href="<c:url value='../../../css/postitnote.css'/> ">
+
+    <script type="text/javascript" src="bootstrap/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="<c:url value='../../../bootstrap/css/bootstrap.min.css'/> ">
+    <link rel="stylesheet" type="text/css" href="<c:url value='../../../bootstrap/css/bootstrap-theme.min.css'/> ">
+    <link rel="stylesheet" type="text/css" href="<c:url value='../../../bootstrap/css/custom.css'/> ">
+
+
 </head>
+
 <body>
 
-<a href="/">Homepage</a>
+<!-- Header -->
+<header id="header" class="alt">
+    <h1><a href="/">Borðið</a></h1>
+    <nav id="nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/addNewRestaurant">Add New Restaurant</a></li>
+            <li><a href="/restaurants">All Restaurants</a></li>
+            <li><a href="/bookings">Bookings</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+</header>
 
 <h1>Book Restaurant</h1>
 
-<%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
-<%--that is added to the model that is passed to the view.--%>
-<%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
-<sf:form method="POST" commandName="restaurant" action="/addNewRestaurant">
-
-    <table>
-        <tr>
-            <td> Name:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-            <td><sf:input path="name" type="text" placeholder="Enter name"/></td>
-        </tr>
-        <tr>
-            <td> Location:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-            <td><sf:input path="location" type="text" placeholder="Enter location"/></td>
-        </tr>
-        <tr>
-            <td>Description:</td>
-                <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-            <td><sf:textarea path="description" type="text" placeholder="Describe here"/></td>
-        </tr>
-    </table>
-
-
-    <input type="submit" VALUE="Add new restaurant"/>
-
-</sf:form>
+${name}
 
 </body>
 </html>

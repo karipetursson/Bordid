@@ -35,22 +35,14 @@ public class Booking {
     }
 
     public String getCustomerName() {
-        return customerName;
+        return this.customerName;
     }
 
-    public void setName(String customerName) {
+    public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }
 
-    public String getRestaurantName() { return restaurantName; }
+    public String getRestaurantName() { return this.restaurantName; }
 
     public void setRestaurantName(String restaurantName) { this.restaurantName = restaurantName; }
-
-    // This is for easier debug.
-    @Override
-    public String toString() {
-        return String.format(
-                "Restaurant[customName=%s, restaurantName=%s]",
-                customerName,restaurantName);
-    }
 }
