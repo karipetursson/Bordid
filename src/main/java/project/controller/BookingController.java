@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import project.persistence.entities.Booking;
-import project.persistence.entities.Restaurant;
 import project.service.BookingService;
 
 /**
@@ -17,113 +16,69 @@ import project.service.BookingService;
 @Controller
 public class BookingController {
 
-    // Instance Variables
+    // Instance Variable
     BookingService bookingService;
 
     // Dependency Injection
     @Autowired
-    public BookingController(BookingService BookingService) {
-        this.bookingService = BookingService;
+    public BookingController(BookingService bookingService) {
+        this.bookingService = bookingService;
     }
 
-    // Method that returns the correct view for the URL /postit
-    // This handles the GET request for this URL
-    // Notice the `method = RequestMethod.GET` part
+
+    // Returns the view for /bookings
+    // Just a search bar
     @RequestMapping(value = "/bookings", method = RequestMethod.GET)
     public String BookingsViewGet(Model model){
 
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in PostitNotes.jsp, you can see that we
-        // reference this attribute there by the name `postitNote`.
-        model.addAttribute("Booking",new Booking());
+        // Add a new Booking to the model
+        model.addAttribute("booking",new Booking());
 
-        // Here we get all the Postit Notes (in a reverse order) and add them to the model
-        //model.addAttribute("Bookings",BookingService.findAllAlphabetical());
+        // Return the view
+        return "bookings/Bookings";
+    }
+
+    // Method that searches within the bookings view
+    // We get restaurantName and use that to search both columns in the database
+    @RequestMapping(value = "/bookings", method = RequestMethod.POST)
+    public String bookingsViewPost(@ModelAttribute("booking") Booking booking,
+                                      Model model){
+
+        // Get the search string from the passed in Booking
+        String searchName = booking.getRestaurantName();
+
+        // Use that name to find correct bookings
+        model.addAttribute("bookings", bookingService.findByCustomerNameOrRestaurantName(searchName, searchName));
 
         // Return the view
         return "bookings/Bookings";
     }
 
 
-    // Method that searches within the Booking view
-
-    @RequestMapping(value = "/bookings", method = RequestMethod.POST)
-    public String BookingsViewPost(@ModelAttribute("Booking") Booking booking,
-                                      Model model){
-
-        String searchName = booking.getCustomerName();
-
-        model.addAttribute("Bookings", bookingService.findByCustomerName(searchName));
-
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in PostitNotes.jsp, you can see that we
-        // reference this attribute there by the name `postitNote`.
-        model.addAttribute("Booking", new Booking());
-
-        // Return the view
-        return "Bookings/Bookings";
-    }
-
-
-    // Method that returns the correct view for the URL /postit/{name}
-    // The {name} part is a Path Variable, and we can reference that in our method
-    // parameters as a @PathVariable. This enables us to create dynamic URLs that are
-    // based on the data that we have.
-    // This method finds all Postit Notes posted by someone with the requested {name}
-    // and returns a list with all those Postit Notes.
-    @RequestMapping(value = "/bookRestaurant/{name}_{location}", method = RequestMethod.GET)
-    public String BookingGetNotesFromName(@PathVariable String name, @PathVariable String location,
-                                             Model model){
-
-        // Get all Postit Notes with this name and add them to the model
-        //model.addAttribute("Bookings", BookingService.findByName(name));
-
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in PostitNotes.jsp, you can see that we
-        // reference this attribute there by the name `postitNote`.
-        model.addAttribute("Booking", new Booking());
-
-        // Return the view
-        return "bookings/BookRestaurant";
-    }
-
-
-    // Method that returns the correct view for the URL /postit
-    // This handles the GET request for this URL
-    // Notice the `method = RequestMethod.GET` part
-    @RequestMapping(value = "/addNewBooking", method = RequestMethod.GET)
-    public String addViewGet(Model model){
-
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in PostitNotes.jsp, you can see that we
-        // reference this attribute there by the name `postitNote`.
-        model.addAttribute("Booking",new Booking());
-
-        // Return the view
-        return "bookings/NewBooking";
-    }
-
+    // Method that adds a booking to the database and returns confirmation view
     @RequestMapping(value = "/bookingConfirmation", method = RequestMethod.POST)
     public String bookingConfirmationViewGet(@ModelAttribute("booking") Booking booking,
                                    Model model){
 
+        // Save the passed in booking
         bookingService.save(booking);
 
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in PostitNotes.jsp, you can see that we
-        // reference this attribute there by the name `postitNote`.
+        // Add the passed in booking to the model again
         model.addAttribute("booking", booking);
 
         // Return the view
         return "bookings/BookingConfirmed";
     }
 
+    // Method that returns a view to book the currently selected restaurant
     @RequestMapping(value = "/bookRestaurant/{name}", method = RequestMethod.GET)
     public String bookRestaurantViewGet(@PathVariable String name,
                                         Model model){
 
+        // Add the passed in name to the model
         model.addAttribute("name", name);
 
+        // Add a new Booking to the model
         model.addAttribute("booking", new Booking());
 
         // Return the view

@@ -15,7 +15,11 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
 
     void delete(Booking restaurant);
 
+    List<Booking> findAllByCustomerNameOrRestaurantName(String customerName, String restaurantName);
+
     List<Booking> findAllByCustomerName(String customerName);
 
     List<Booking> findAllByRestaurantName(String restaurantName);
+
+    List<Booking> findAll();
 }

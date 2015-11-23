@@ -43,4 +43,14 @@ public class BookingServiceImplementation implements BookingService {
     public List<Booking> findByRestaurantName(String customerName) {
         return repository.findAllByRestaurantName(customerName);
     }
+
+    @Override
+    public List<Booking> findByCustomerNameOrRestaurantName(String customerName, String restaurantName) {
+        return repository.findAllByCustomerNameOrRestaurantName(customerName, restaurantName);
+    }
+
+    @Override
+    public List<Booking> findAll() {
+        return repository.findAll();
+    }
 }
