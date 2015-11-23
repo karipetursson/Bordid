@@ -14,18 +14,24 @@ public class Restaurant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String address;
     private String location;
-    private String description;
+    private String shortDescription;
+    private String longDescription;
+    private String linkToHomepage;
 
     // Notice the empty constructor, because we need to be able to create an empty PostitNote to add
     // to our model so we can use it with our form
     public Restaurant() {
     }
 
-    public Restaurant(String name, String location, String description) {
+    public Restaurant(String name, String address, String location, String shortDescription, String longDescription, String linkToHomepage) {
         this.name = name;
+        this.address = address;
         this.location = location;
-        this.description = description;
+        this.shortDescription = shortDescription;
+        this.longDescription = longDescription;
+        this.linkToHomepage = linkToHomepage;
     }
 
     public Long getId() {
@@ -48,19 +54,35 @@ public class Restaurant {
 
     public void setLocation(String location) { this.location = location; }
 
-    public String getDescription() {
-        return description;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDescription(String note) {
-        this.description = note;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    // This is for easier debug.
-    @Override
-    public String toString() {
-        return String.format(
-                "Restaurant[name=%s, location=%s, description=%s]",
-                name,location,description);
+    public String getShortDescription() {
+        return shortDescription;
+    }
+
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
+    }
+
+    public String getLongDescription() {
+        return longDescription;
+    }
+
+    public void setLongDescription(String longDescription) {
+        this.longDescription = longDescription;
+    }
+
+    public String getLinkToHomepage() {
+        return linkToHomepage;
+    }
+
+    public void setLinkToHomepage(String linkToHomepage) {
+        this.linkToHomepage = linkToHomepage;
     }
 }

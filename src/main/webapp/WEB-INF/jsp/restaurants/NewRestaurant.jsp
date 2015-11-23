@@ -75,14 +75,29 @@
             <td><sf:input path="name" type="text" placeholder="Enter name"/></td>
         </tr>
         <tr>
-            <td> Location:</td>
+            <td>Address:</td>
+                <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
+            <td><sf:input path="address" type="text" placeholder="Enter address"/></td>
+        </tr>
+        <tr>
+            <td>Location:</td>
                 <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
             <td><sf:input path="location" type="text" placeholder="Enter location"/></td>
         </tr>
         <tr>
-            <td>Description:</td>
+            <td>Short Description:</td>
                 <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-            <td><sf:textarea path="description" type="text" placeholder="Describe here"/></td>
+            <td><sf:textarea path="shortDescription" type="text" placeholder="Enter short description"/></td>
+        </tr>
+        <tr>
+            <td>Long Description:</td>
+                <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
+            <td><sf:textarea path="longDescription" type="text" placeholder="Enter long description"/></td>
+        </tr>
+        <tr>
+            <td>Link to homepage:</td>
+                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
+            <td><sf:input path="linkToHomepage" type="text" placeholder="Enter link to homepage"/></td>
         </tr>
     </table>
 

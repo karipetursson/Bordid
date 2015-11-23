@@ -17,14 +17,14 @@
 
     <title>All Restaurants</title>
 
-    <link href="css/postitnote.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<c:url value='../../../css/postitnote.css'/> ">
 
     <script type="text/javascript" src="bootstrap/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="bootstrap/css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<c:url value='../../../bootstrap/css/bootstrap.min.css'/> ">
+    <link rel="stylesheet" type="text/css" href="<c:url value='../../../bootstrap/css/bootstrap-theme.min.css'/> ">
+    <link rel="stylesheet" type="text/css" href="<c:url value='../../../bootstrap/css/custom.css'/> ">
 
 
 </head>
@@ -97,16 +97,62 @@
                         <%--it in the singular item var, and then just a dot followed by the attribute name--%>
 
                         <%--Create a link based on the name attribute value--%>
-                    <td><a href="/restaurants/${restaurant.name}_${restaurant.location}">${restaurant.name}</a></td>
+                    <td><a href="/restaurantInfo/${restaurant.name}">${restaurant.name}</a></td>
                         <%--The String in the note attribute--%>
+                    <td>${restaurant.address}</td>
+
                     <td>${restaurant.location}</td>
 
-                    <td>${restaurant.description}</td>
+                    <td>${restaurant.shortDescription}</td>
 
-                    <td><a href="/bookRestaurant/${restaurant.name}_${restaurant.location}">Book</a></td>
+                    <td><a href="/bookRestaurant/${restaurant.name}">Book</a></td>
                 </tr>
             </c:forEach>
         </table>
+
+
+        <div>
+
+            <c:forEach var="restaurant" items="${restaurants}">
+
+                <div class="restaurant">
+
+                    <div class="row">
+
+                        <div class="col-md-3"></div>
+
+                        <div class="col-md-6">
+
+                            <h3>${restaurant.name}</h3>
+
+                        </div>
+
+                        <div class="col-md-6"></div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-3"></div>
+
+                        <div class="col-md-6">
+
+                            <p>${restaurant.address}</p>
+
+                        </div>
+
+                        <div class="col-md-6"></div>
+
+                    </div>
+
+                </div>
+
+            </c:forEach>
+
+        </div>
+
+
+
     </c:when>
 
     <%--If all tests are false, then do this--%>

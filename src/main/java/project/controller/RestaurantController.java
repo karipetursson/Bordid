@@ -62,12 +62,12 @@ public class RestaurantController {
 
 
     // Method that gives detailed info about a certain restaurant
-    @RequestMapping(value = "/restaurants/{name}_{location}", method = RequestMethod.GET)
-    public String restaurantGetNotesFromName(@PathVariable String name, @PathVariable String location,
+    @RequestMapping(value = "/restaurantInfo/{name}", method = RequestMethod.GET)
+    public String restaurantGetNotesFromName(@PathVariable String name,
                                              Model model){
 
         // Get all Postit Notes with this name and add them to the model
-        model.addAttribute("restaurants", restaurantService.findByNameAndLocation(name, location));
+        model.addAttribute("restaurants", restaurantService.findByName(name));
 
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we
@@ -75,7 +75,7 @@ public class RestaurantController {
         model.addAttribute("restaurant", new Restaurant());
 
         // Return the view
-        return "restaurants/Restaurants";
+        return "restaurants/RestaurantInfo";
     }
 
 
