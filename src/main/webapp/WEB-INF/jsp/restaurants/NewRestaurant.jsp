@@ -106,7 +106,7 @@
             <div class="control-group" id="rating">
                 <label class="control-label">Rating: * (Between 1 and 5)</label>
                 <div class="controls">
-                    <sf:input path="rating" type="number"  value="1.0" step="0.5" min="1.0" max="5.0"/>
+                    <sf:input path="rating" type="number"  value="1" step="0.5" min="1.0" max="5.0"/>
                 </div>
             </div>
         <div class="control-group">

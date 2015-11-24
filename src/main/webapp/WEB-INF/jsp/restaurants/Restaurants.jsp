@@ -80,73 +80,31 @@
 
                         <div class="row">
 
-                            <div class="col-md-3"></div>
 
-                            <div class="col-md-6">
+                            <div id = "restName">
 
                                 <h3><a href="/restaurantInfo/${restaurant.id}">${restaurant.name}</a></h3>
 
                             </div>
 
-                            <div class="col-md-6"></div>
+
+                            <p>${restaurant.address}</p>
+
+                            <p>${restaurant.location}</p>
+
+                            <p>${restaurant.shortDescription}</p>
+
+                            <p><a href="/bookRestaurant/${restaurant.name}">Book this restaurant</a></p>
 
                         </div>
 
-                        <div class="row">
+                    </div>
 
-                            <div class="col-md-3"></div>
 
-                            <div class="col-md-6">
 
-                                <p>${restaurant.address}</p>
 
-                            </div>
 
-                            <div class="col-md-6"></div>
 
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-md-3"></div>
-
-                            <div class="col-md-6">
-
-                                <p>${restaurant.location}</p>
-
-                            </div>
-
-                            <div class="col-md-6"></div>
-
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-md-3"></div>
-
-                            <div class="col-md-6">
-
-                                <p>${restaurant.shortDescription}</p>
-
-                            </div>
-
-                            <div class="col-md-6"></div>
-
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-md-3"></div>
-
-                            <div class="col-md-6">
-
-                                <p><a href="/bookRestaurant/${restaurant.name}">Book this restaurant</a></p>
-
-                            </div>
-
-                            <div class="col-md-6"></div>
-
-                        </div>
 
                     </div>
 
