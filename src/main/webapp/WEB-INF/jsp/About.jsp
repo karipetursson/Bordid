@@ -48,11 +48,6 @@
 </header>
 
 
-
-<a href="/">Homepage</a>
-
-
-
 <!-- Footer -->
 <footer id="footer">
     <ul class="menu">

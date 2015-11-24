@@ -31,36 +31,40 @@
 
 <body>
 
-<!-- Header
+<!-- Header-->
 <header id="header" class="alt">
     <h1><a href="/">Borðið</a></h1>
     <nav id="nav">
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/addNewRestaurant">Add New Restaurant</a></li>
-            <li><a href="/restaurants">All Restaurants</a></li>
+            <li><a href="/addNewRestaurant">New Restaurant</a></li>
+            <li><a href="/restaurants">Restaurants</a></li>
             <li><a href="/bookings">Bookings</a></li>
             <li><a href="/about">About</a></li>
         </ul>
     </nav>
 </header>
 
--->
+
 
 <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
 <%--that is added to the model that is passed to the view.--%>
 <%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
+<div class="wrapper style11">
 <sf:form method="POST" commandName="booking" action="/bookings">
 
-    <table>
-        <tr>
-            <td>Restaurant or customer name:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-            <td><sf:input path="restaurantName" type="text" placeholder="Enter name"/></td>
-        </tr>
-    </table>
-
-    <input type="submit" VALUE="Search!"/>
+    <div class="featurette" id ="skitmix">
+        <div class="featurette-inner text-center">
+            <form role="form" class="search">
+                <div class="input-group input-group-lg">
+                    <sf:input path="restaurantName" type="text" placeholder="Enter name" class="form-control"/>
+                    <span class="input-group-btn">
+                        <input type="submit" VALUE="Search!" class="btn btn-danger"/>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
 
 </sf:form>
 
@@ -130,9 +134,23 @@
 
     <%--If all tests are false, then do this--%>
     <c:otherwise>
-        <h3>Please search by your name or a restaurant name</h3>
+        <h4 id="bookingSearch">Please search by your name or a restaurant name</h4>
     </c:otherwise>
 </c:choose>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <ul class="menu">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+    <div class="copyright">
+        &copy; Bordid. All rights reserved.
+    </div>
+</footer>
 
 </body>
 

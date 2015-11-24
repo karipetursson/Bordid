@@ -3966,11 +3966,17 @@ body.landing #page-wrapper {
         width:15%;
     }
 
+    #skitmix{
+        padding:3em;
+    }
 
     #restlocation {
         padding:1em;
     }
 
+    #bookingSearch{
+        text-align: center;
+    }
 
     .ui-datepicker th {
         text-transform: uppercase;
