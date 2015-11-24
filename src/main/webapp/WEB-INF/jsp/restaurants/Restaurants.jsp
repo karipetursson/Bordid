@@ -83,7 +83,7 @@
 
                             <div class="col-md-6">
 
-                                <h3><a href="/restaurantInfo/${restaurant.name}">${restaurant.name}</a></h3>
+                                <h3><a href="/restaurantInfo/${restaurant.id}">${restaurant.name}</a></h3>
 
                             </div>
 

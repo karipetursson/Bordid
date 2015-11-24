@@ -81,61 +81,17 @@
 
 </sf:form>
 
-<%--Choose what code to generate based on tests that we implement--%>
-<c:choose>
-    <%--If the model has an attribute with the name `postitNotes`--%>
-    <c:when test="${not empty restaurants}">
-        <%--Create a table for the Postit Notes--%>
-        <table class="table">
+${restaurant.name}
 
-                <%--For each postit note, that is in the list that was passed in the model--%>
-                <%--generate a row in the table--%>
-                <%--Here we set `postit` as a singular item out of the list `postitNotes`--%>
-            <c:forEach var="restaurant" items="${restaurants}">
-                <tr>
-                        <%--We can reference attributes of the Entity by just entering the name we gave--%>
-                        <%--it in the singular item var, and then just a dot followed by the attribute name--%>
+${restaurant.address}
 
-                        <%--Create a link based on the name attribute value--%>
-                    <td><a href="/restaurants/${restaurant.name}">${restaurant.name}</a></td>
-                        <%--The String in the note attribute--%>
-                    <td>${restaurant.address}</td>
+${restaurant.location}
 
-                    <td>${restaurant.location}</td>
+${restaurant.rating}
 
-                    <td>${restaurant.longDescription}</td>
+${restaurant.longDescription}
 
-                    <td><a href="/bookRestaurant/${restaurant.name}">Book</a></td>
-                </tr>
-            </c:forEach>
-
-
-        </table>
-
-        <div>
-
-            <c:forEach var="restaurant" items="${restaurants}">
-
-                <div>
-
-                    <h3>${restaurant.name}</h3>
-
-                    <p>${restaurant.address}</p>
-
-                    <p>${restaurant.location}</p>
-
-                </div>
-
-            </c:forEach>
-
-        </div>
-    </c:when>
-
-    <%--If all tests are false, then do this--%>
-    <c:otherwise>
-        <h3>We have no restaurants!</h3>
-    </c:otherwise>
-</c:choose>
+${restaurant.linkToHomepage}
 
 </body>
 </html>

@@ -7,27 +7,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 
-    // Request mapping is the path that you want to map this method to
-    // In this case, the mapping is the root "/", so when the project
-    // is running and you enter "localhost:8080" into a browser, this
-    // method is called
+    // Method that requests the frontpage
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String homeViewGet() {
 
-        // The string "Index" that is returned here is the name of the view
-        // (the Index.jsp file) that is in the path /main/webapp/WEB-INF/jsp/
-        // If you change "Index" to something else, be sure you have a .jsp
-        // file that has the same name
+        // Return the view
         return "Index";
     }
 
+    // Method that request the "about" page that includes info on the company
     @RequestMapping(value = "/about", method = RequestMethod.GET)
     public String aboutViewGet() {
 
-        // The string "Index" that is returned here is the name of the view
-        // (the Index.jsp file) that is in the path /main/webapp/WEB-INF/jsp/
-        // If you change "Index" to something else, be sure you have a .jsp
-        // file that has the same name
+        // Return the view
         return "About";
     }
 }

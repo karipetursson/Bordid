@@ -34,4 +34,6 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
     List<Restaurant> findByName(String name);
 
     List<Restaurant> findByNameAndLocation(String name, String location);
+
+    Restaurant findById(Long id);
 }

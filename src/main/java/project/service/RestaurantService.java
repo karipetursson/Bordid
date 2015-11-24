@@ -49,4 +49,5 @@ public interface RestaurantService {
      */
     List<Restaurant> findByName(String name);
 
+    Restaurant findById(Long id);
 }

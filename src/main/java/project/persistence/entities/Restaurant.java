@@ -16,6 +16,7 @@ public class Restaurant {
     private String name;
     private String address;
     private String location;
+    private double rating;
     private String shortDescription;
     private String longDescription;
     private String linkToHomepage;
@@ -25,10 +26,11 @@ public class Restaurant {
     public Restaurant() {
     }
 
-    public Restaurant(String name, String address, String location, String shortDescription, String longDescription, String linkToHomepage) {
+    public Restaurant(String name, String address, String location, Double rating, String shortDescription, String longDescription, String linkToHomepage) {
         this.name = name;
         this.address = address;
         this.location = location;
+        this.rating = rating;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
         this.linkToHomepage = linkToHomepage;
@@ -53,6 +55,14 @@ public class Restaurant {
     public String getLocation() { return location; }
 
     public void setLocation(String location) { this.location = location; }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
 
     public String getAddress() {
         return address;

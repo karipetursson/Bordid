@@ -25,7 +25,8 @@ public class RestaurantController {
         this.restaurantService = restaurantService;
     }
 
-    //
+    // Method that requests the all restaurants page
+    // Displays all restaurants currently in the database
     @RequestMapping(value = "/restaurants", method = RequestMethod.GET)
     public String restaurantsViewGet(Model model){
 
@@ -51,7 +52,7 @@ public class RestaurantController {
         // Use that name to find all restaurants with the same name
         model.addAttribute("restaurants", restaurantService.findByName(searchName));
 
-        // I'm not sure if we need this.. Tried commenting out and nothing changed
+        // Add a new Restaurant to the model (not sure if we need this)
         model.addAttribute("restaurant", new Restaurant());
 
         // Return the view
@@ -59,18 +60,17 @@ public class RestaurantController {
     }
 
 
-    // Method that gives detailed info about a certain restaurant
-    @RequestMapping(value = "/restaurantInfo/{name}", method = RequestMethod.GET)
-    public String restaurantInfoViewGet(@PathVariable String name,
+    // Method that returns a view giving detailed info about a certain restaurant
+    @RequestMapping(value = "/restaurantInfo/{id}", method = RequestMethod.GET)
+    public String restaurantInfoViewGet(@PathVariable Long id,
                                              Model model){
 
-        // Get all Postit Notes with this name and add them to the model
-        model.addAttribute("restaurants", restaurantService.findByName(name));
+        // Find the restaurant in the database with the passed in id
+        Restaurant infoRestaurant = restaurantService.findById(id);
 
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in PostitNotes.jsp, you can see that we
-        // reference this attribute there by the name `postitNote`.
-        model.addAttribute("restaurant", new Restaurant());
+        // We can be sure that there is always just one restaurant with that id
+        // We add that restaurant to the model
+        model.addAttribute("restaurant", infoRestaurant);
 
         // Return the view
         return "restaurants/RestaurantInformation";
