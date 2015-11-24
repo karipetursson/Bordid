@@ -76,40 +76,26 @@ public class RestaurantController {
         return "restaurants/RestaurantInformation";
     }
 
-
-    // Method that returns the correct view for the URL /postit
-    // This handles the GET request for this URL
-    // Notice the `method = RequestMethod.GET` part
+    // Method that returns a view allowing users to add new restaurants to the system
     @RequestMapping(value = "/addNewRestaurant", method = RequestMethod.GET)
     public String addViewGet(Model model){
 
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in PostitNotes.jsp, you can see that we
-        // reference this attribute there by the name `postitNote`.
+        // Add a new restaurant to the model
         model.addAttribute("restaurant",new Restaurant());
 
         // Return the view
          return "restaurants/NewRestaurant";
     }
 
-
-    // Method that receives the POST request on the URL /postit
-    // and receives the ModelAttribute("postitNote")
-    // That attribute is the attribute that is mapped to the form, so here
-    // we can save the postit note because we get the data that was entered
-    // into the form.
-    // Notice the `method = RequestMethod.POST` part
-
+    // Method that adds the passed in restaurant to the database
     @RequestMapping(value = "/addNewRestaurant", method = RequestMethod.POST)
     public String addViewPost(@ModelAttribute("restaurant") Restaurant restaurant,
                                      Model model){
 
-        // Save the Postit Note that we received from the form
+        // Save the restaurant passed in from the form
         restaurantService.save(restaurant);
 
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in PostitNotes.jsp, you can see that we
-        // reference this attribute there by the name `postitNote`.
+        // Add a new restaurant to the model
         model.addAttribute("restaurant", new Restaurant());
 
         // Return the view

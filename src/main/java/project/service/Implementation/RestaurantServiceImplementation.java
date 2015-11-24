@@ -43,28 +43,6 @@ public class RestaurantServiceImplementation implements RestaurantService {
     public List<Restaurant> findAllAlphabetical() { return repository.findAllByOrderByNameAsc();}
 
     @Override
-    public List<Restaurant> findAllReverseOrder() {
-
-        List<Restaurant> restaurants = repository.findAll();
-
-        // Reverse the list
-        Collections.reverse(restaurants);
-
-        return restaurants;
-    }
-
-    @Override
-    public List<Restaurant> findByNameAndLocation(String name, String location) {
-
-        return repository.findByNameAndLocation(name, location);
-    }
-
-    @Override
-    public Restaurant findOne(Long id) {
-        return repository.findOne(id);
-    }
-
-    @Override
     public List<Restaurant> findByName(String name) {
         return repository.findByName(name);
     }

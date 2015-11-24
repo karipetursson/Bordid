@@ -11,29 +11,21 @@ import java.util.List;
  */
 public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 
+    // Save restaurant to the database
     Restaurant save(Restaurant restaurant);
 
+    // Delete restaurant from the database
     void delete(Restaurant restaurant);
 
+    // Find all restaurants in the database
     List<Restaurant> findAll();
 
-    // If we need a custom query that maybe doesn't fit the naming convention used by the JPA repository,
-    // then we can write it quite easily with the @Query notation, like you see below.
-    // This method returns all PostitNotes where the length of the name is equal or greater than 3 characters.
-    //@Query(value = "SELECT p FROM Restaurant p where length(p.name) >= 3 ")
-    //List<Restaurant> findAllWithNameLongerThan3Chars();
-
-    // Instead of the method findAllReverseOrder() in PostitNoteService.java,
-    // We could have used this method by adding the words
-    // ByOrderByIdDesc, which mean: Order By Id in a Descending order
-    //
+    // Find all restaurants and order them by name
     List<Restaurant> findAllByOrderByNameAsc();
 
-    Restaurant findOne(Long id);
-
+    // Find all restaurants with the passed in name
     List<Restaurant> findByName(String name);
 
-    List<Restaurant> findByNameAndLocation(String name, String location);
-
+    // Find a restaurant with the passed in id
     Restaurant findById(Long id);
 }

@@ -11,15 +11,21 @@ import java.util.List;
  */
 public interface BookingRepository extends JpaRepository<Booking, Long> {
 
-    Booking save(Booking restaurant);
+    // Save booking to the database
+    Booking save(Booking booking);
 
-    void delete(Booking restaurant);
+    // Delete booking from the database
+    void delete(Booking booking);
 
+    // Find all bookings that have either the passed in customerName or restaurantName
     List<Booking> findAllByCustomerNameOrRestaurantName(String customerName, String restaurantName);
 
+    // Find all bookings with the passed in customerName
     List<Booking> findAllByCustomerName(String customerName);
 
+    // Find all bookings with the passed in restaurantName
     List<Booking> findAllByRestaurantName(String restaurantName);
 
+    // Find all bookings in the database
     List<Booking> findAll();
 }

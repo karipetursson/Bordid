@@ -91,7 +91,7 @@ ${restaurant.rating}
 
 ${restaurant.longDescription}
 
-${restaurant.linkToHomepage}
+<a href="https://${restaurant.linkToHomepage}">${restaurant.linkToHomepage}</a>
 
 </body>
 </html>

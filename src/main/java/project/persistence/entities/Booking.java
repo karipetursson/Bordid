@@ -23,9 +23,11 @@ public class Booking {
     public Booking() {
     }
 
-    public Booking(String customerName, String restaurantName) {
+    public Booking(String customerName, String restaurantName, String email, String date) {
         this.customerName = customerName;
         this.restaurantName = restaurantName;
+        this.email = email;
+        this.date = date;
     }
 
     public Long getId() {
