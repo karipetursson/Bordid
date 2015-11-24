@@ -52,14 +52,11 @@
             <form role="form" class="search">
                 <div class="input-group input-group-lg">
                     <sf:input path="name" type="text" placeholder="Enter Restaurant name" class="form-control"/>
-            <span class="input-group-btn">
-                    <input type="submit" VALUE="Search!" class="btn btn-danger"/>
-
-            </span>
+                    <span class="input-group-btn">
+                        <input type="submit" VALUE="Search!" class="btn btn-danger"/>
+                    </span>
                 </div>
-                <!-- /input-group -->
             </form>
-            <!-- /.max-width on this form -->
         </div>
         <!-- /.featurette-inner (display:table-cell) -->
     </div>

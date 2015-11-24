@@ -53,9 +53,10 @@
             <form role="form" class="search">
                 <div class="input-group input-group-lg">
                     <input type="search" placeholder="search" class ="form-control">
-            <span class="input-group-btn">
-            <button class="btn btn-danger" type="button">Search</button>
-            </span>
+
+                    <span class="input-group-btn">
+                        <a href="/restaurants"><button class="btn btn-danger" type="button">Search</button></a>
+                    </span>
                 </div>
                 <!-- /input-group -->
             </form>
