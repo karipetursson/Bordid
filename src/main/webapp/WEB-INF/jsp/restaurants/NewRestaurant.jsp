@@ -4,7 +4,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 
-<html lang="en">
 
 <head>
 
@@ -15,98 +14,107 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <title>Restaurants</title>
+    <title>Borðið</title>
 
     <script type="text/javascript" src="bootstrap/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="<c:url value='../../../bootstrap/css/bootstrap.min.css'/> ">
+    <link rel="stylesheet" type="text/css" href="<c:url value='../../../bootstrap/css/bootstrap-theme.min.css'/> ">
+    <link rel="stylesheet" type="text/css" href="<c:url value='../../../bootstrap/css/custom.css'/> ">
 
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="bootstrap/css/custom.css" rel="stylesheet">
 
-    <link href="css/postitnote.css" rel="stylesheet">
 </head>
-<body>
+<!-- Header -->
+<header id="header" class="alt">
+    <h1><a href="/">Borðið</a></h1>
+    <nav id="nav">
+        <ul>
+            <li><a href="/addNewRestaurant">New Restaurant</a></li>
+            <li><a href="/restaurants">All Restaurants</a></li>
+            <li><a href="/bookings">Bookings</a></li>
 
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Borðið</a>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="wrapper style11">
+    <div>
+
+
+        <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
+        <%--that is added to the model that is passed to the view.--%>
+        <%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
+        <sf:form method="POST" commandName="restaurant" action="/addNewRestaurant" id="newRestForm">
+
+        <div class="control-group" id="name">
+            <label class="control-label">Name: *</label>
+            <div class="controls">
+                <sf:input path="name" type="text" placeholder="Enter name"/>
+            </div>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="/addNewRestaurant">Add New Restaurant</a></li>
-                <li><a href="/restaurants">All Restaurants</a></li>
-                <li><a href="/bookings">All Bookings</a></li>
-            </ul>
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Settu inn leitarorð">
-                </div>
-                <button type="submit" class="btn btn-default">Leita</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/about">About</a></li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
+        <div class="control-group" id="houseaddress">
+            <label class="control-label">Address: *</label>
+            <div class="controls">
+                <sf:input path="address" type="text" placeholder="Enter address"/>
+            </div>
+        </div>
 
-<h1>Add New Restaurant</h1>
+        <div class="control-group" id="zipcode">
+            <label class="control-label">Location: *</label>
+            <div class="controls">
+                <sf:input path="location" type="text" placeholder="Enter location"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">
+                Short Description:
+            </label>
+            <div class="controls">
+                <sf:textarea path="shortDescription" type="text" placeholder="Enter short description"/>
+            </div>
+        </div>
 
-<%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
-<%--that is added to the model that is passed to the view.--%>
-<%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
-<sf:form method="POST" commandName="restaurant" action="/addNewRestaurant">
+        <div class="control-group">
+            <label class="control-label">
+                Long Description:
+            </label>
+            <div class="controls">
+                <sf:textarea path="longDescription" type="text" placeholder="Enter long description"/>
+            </div>
+        </div>
 
-    <table>
-        <tr>
-            <td> Name:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-            <td><sf:input path="name" type="text" placeholder="Enter name"/></td>
-        </tr>
-        <tr>
-            <td>Address:</td>
-                <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-            <td><sf:input path="address" type="text" placeholder="Enter address"/></td>
-        </tr>
-        <tr>
-            <td>Location:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-            <td><sf:input path="location" type="text" placeholder="Enter location"/></td>
-        </tr>
-        <tr>
-            <td>Short Description:</td>
-                <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-            <td><sf:textarea path="shortDescription" type="text" placeholder="Enter short description"/></td>
-        </tr>
-        <tr>
-            <td>Long Description:</td>
-                <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-            <td><sf:textarea path="longDescription" type="text" placeholder="Enter long description"/></td>
-        </tr>
-        <tr>
-            <td>Link to homepage:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-            <td><sf:input path="linkToHomepage" type="text" placeholder="Enter link to homepage"/></td>
-        </tr>
-    </table>
+        <div class="control-group">
+            <label class="control-label">
+                Link to homepage:
+            </label>
+            <div class="controls">
+                <sf:input path="linkToHomepage" type="text" placeholder="Enter link to homepage"/>
+            </div>
+        </div>
 
-    <input type="submit" VALUE="Add new restaurant"/>
 
-</sf:form>
+
+
+        <input type="submit" VALUE="Add new restaurant"/>
+    </div>
+    </sf:form>
+
+</div></div>
+<!-- Footer -->
+<footer id="footer">
+    <ul class="menu">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+    <div class="copyright">
+        &copy; Bordid. All rights reserved.
+    </div>
+</footer>
 
 </body>
 </html>

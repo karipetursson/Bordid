@@ -27,16 +27,16 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='../../css/postitnote.css'/> ">
 
 </head>
-
+<body>
 <!-- Header -->
 <header id="header" class="alt">
     <h1><a href="/">Borðið</a></h1>
     <nav id="nav">
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/addNewRestaurant">Add New Restaurant</a></li>
+            <li><a href="/addNewRestaurant">New Restaurant</a></li>
             <li><a href="/restaurants">All Restaurants</a></li>
             <li><a href="/bookings">Bookings</a></li>
+
             <li><a href="/about">About</a></li>
         </ul>
     </nav>
@@ -46,7 +46,7 @@
     <h2>Borðið</h2>
     <p>Finnið - Bókið - Borðið</p>
     <ul class="actions">
-        <li><a href="#" class="button">Meira</a></li>
+        <li><a href="#one" class="button " class="more scrolly">Meira</a></li>
     </ul>
     <div class="featurette">
         <div class="featurette-inner text-center">
@@ -65,32 +65,36 @@
     </div>
 </section>
 <!-- One -->
-<div class="wrapper style1">
+<div id="one" class="wrapper style1">
     <section class="container">
         <header class="major">
-            <h2>Veitingastaðirnir</h2>
-            <p>Borðið veitir þér einstaka upplifun og aðgengi - með alla veitingastaði á einum stað.</p>
+            <h2>Find a place to eat</h2>
+            <p>Want to try a new restaurant in your neighborhood? The capital has many gourmet addresses.
+                To help you find yours, discover the best Icelandic restaurants guide, bistros to the finest gourmet restaurants.
+                 <a href="/restaurants">See all restaurants in Iceland.</a> </p>
+
         </header>
         <div class="row uniform">
             <div class="4u 12u(narrower)">
                 <section class="box special">
                     <i class="icon major fa-user"></i>
-                    <h3>Vinsælast</h3>
-                    <p>Vinsælustu staðirnir á meðal neytenda.</p>
+                    <h3>Top 10</h3>
+                    <p>Certificate of excellence</p>
                 </section>
             </div>
             <div class="4u 12u(narrower)">
                 <section class="box special">
                     <i class="icon major fa-tint"></i>
-                    <h3>Finndu veitingastaðinn sem er næst þér</h3>
-                    <p>blblblblblbla.</p>
+                    <h3>Best deals in town</h3>
+                    <p>Don't think that being more affordable makes it less good</p>
                 </section>
             </div>
+
             <div class="4u 12u(narrower)">
                 <section class="box special">
                     <i class="icon major fa-cog"></i>
-                    <h3>Komdu mér á óvart</h3>
-                    <p>Leyfðu okkur að koma þér á óvart með því að bjóða þér upp á veitingastaði.</p>
+                    <h3>Cousine</h3>
+                    <p>Experience Icelandic cousine.</p>
                 </section>
             </div>
         </div>
@@ -176,9 +180,6 @@
         &copy; Bordid. All rights reserved.
     </div>
 </footer>
-
-</div>
-
 
 </body>
 
