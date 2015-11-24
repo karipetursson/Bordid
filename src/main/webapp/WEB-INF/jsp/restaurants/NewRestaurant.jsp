@@ -25,13 +25,14 @@
 
 
 </head>
+<body>
 <!-- Header -->
 <header id="header" class="alt">
     <h1><a href="/">Borðið</a></h1>
     <nav id="nav">
         <ul>
             <li><a href="/addNewRestaurant">New Restaurant</a></li>
-            <li><a href="/restaurants">All Restaurants</a></li>
+            <li><a href="/restaurants">Restaurants</a></li>
             <li><a href="/bookings">Bookings</a></li>
 
             <li><a href="/about">About</a></li>
@@ -46,6 +47,7 @@
         <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
         <%--that is added to the model that is passed to the view.--%>
         <%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
+
         <sf:form method="POST" commandName="restaurant" action="/addNewRestaurant" id="newRestForm">
 
         <div class="control-group" id="name">
@@ -96,7 +98,7 @@
                 Link to homepage:
             </label>
             <div class="controls">
-                <sf:input path="linkToHomepage" type="text" placeholder="Enter link to homepage"/>
+                <sf:input path="linkToHomepage" type="number" placeholder="Enter link to homepage"/>
             </div>
         </div>
 

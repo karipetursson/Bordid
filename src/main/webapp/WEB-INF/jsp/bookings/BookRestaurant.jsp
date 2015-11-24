@@ -39,52 +39,61 @@
     <h1><a href="/">Borðið</a></h1>
     <nav id="nav">
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/addNewRestaurant">Add New Restaurant</a></li>
-            <li><a href="/restaurants">All Restaurants</a></li>
+            <li><a href="/addNewRestaurant">New Restaurant</a></li>
+            <li><a href="/restaurants">Restaurants</a></li>
             <li><a href="/bookings">Bookings</a></li>
+
             <li><a href="/about">About</a></li>
         </ul>
     </nav>
 </header>
 
-<sf:form method="POST" commandName="booking" action="/bookingConfirmation">
+<div class="wrapper style11">
+    <div>
+        <sf:form method="POST" commandName="booking" action="/bookingConfirmation" id="newRestForm">
 
-    <table>
-        <tr>
-            <td>Restaurant name:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-            <td><sf:input path="restaurantName" type="text" placeholder="Enter restaurant name" value="${name}"/></td>
-        </tr>
-        <tr>
-            <td>Full name:</td>
-                <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-            <td><sf:input path="customerName" type="text" placeholder="Enter full name"/></td>
-        </tr>
-        <tr>
-            <td>E-mail:</td>
-                <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-            <td><sf:input path="email" type="text" placeholder="Enter your e-mail"/></td>
-        </tr>
-        <tr>
-            <td>Date:</td>
-            <td>
-                <script>
+            <div class="control-group" id="name">
+                <label class="control-label">Restaurant name: *</label>
+                <div class="controls">
+                    <sf:input path="restaurantName" type="text" placeholder="Enter restaurant name" value="${name}"/>
+                </div>
+                <label class="control-label">Full name: *</label>
+                <div class="controls">
+                    <sf:input path="customerName" type="text" placeholder="Enter full name"/>
+                </div>
+
+                <label class="control-label">Email: *</label>
+                <div class="controls">
+                    <sf:input path="email" type="text" placeholder="Enter your e-mail"/>
+                </div>
+
+                <div class="controls">
+                    <script>
                     $(function() {
                         $( "#datepicker" ).datepicker();
                     });
                 </script>
-
-                Date: <sf:input path="date" type="text" id="datepicker"/>
-            </td>
-        </tr>
-
-    </table>
+                    Date: <sf:input path="date" type="text" id="datepicker"/>
+                </div>
+            </div>
 
     <input type="submit" VALUE="Book a table"/>
 
 </sf:form>
-
+    </div>
+</div>
+<!-- Footer -->
+<footer id="footer">
+    <ul class="menu">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+    <div class="copyright">
+        &copy; Bordid. All rights reserved.
+    </div>
+</footer>
 </body>
 
 </html>

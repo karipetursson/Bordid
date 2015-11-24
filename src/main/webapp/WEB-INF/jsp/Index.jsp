@@ -34,7 +34,7 @@
     <nav id="nav">
         <ul>
             <li><a href="/addNewRestaurant">New Restaurant</a></li>
-            <li><a href="/restaurants">All Restaurants</a></li>
+            <li><a href="/restaurants">Restaurants</a></li>
             <li><a href="/bookings">Bookings</a></li>
 
             <li><a href="/about">About</a></li>
@@ -77,7 +77,7 @@
         <div class="row uniform">
             <div class="4u 12u(narrower)">
                 <section class="box special">
-                    <i class="icon major fa-user"></i>
+                    <a href="/restaurants/top"><i class="icon major fa-user"></i></a>
                     <h3>Top 10</h3>
                     <p>Certificate of excellence</p>
                 </section>
