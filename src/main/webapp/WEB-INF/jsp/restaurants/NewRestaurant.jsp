@@ -41,51 +41,50 @@
 </header>
 
 <div class="wrapper style11">
-    <div>
 
+    <sf:form method="POST" commandName="restaurant" action="/addNewRestaurant" id="newRestForm">
 
-        <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
-        <%--that is added to the model that is passed to the view.--%>
-        <%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
+        <h3>Please enter restaurant details below</h3>
+        <p>Fields marked with * must be filled out</p>
 
-        <sf:form method="POST" commandName="restaurant" action="/addNewRestaurant" id="newRestForm">
+        <div class="control-group" id="name">
 
-            <div class="control-group" id="name">
-
-                <label class="control-label">Name: *</label>
-                <div class="controls">
-                    <sf:input path="name" type="text" placeholder="Enter name"/>
-                </div>
-                <c if test="${not empty nameError}">
-                        ${nameError}
-                </c>
-
+            <label class="control-label">Name: *</label>
+            <div class="controls">
+                <sf:input path="name" type="text" placeholder="Enter name"/>
             </div>
 
-            <div class="control-group" id="houseaddress">
+            <c if test="${not empty nameError}">
+                ${nameError}
+            </c>
 
-                <label class="control-label">Address: *</label>
-                <div class="controls">
-                    <sf:input path="address" type="text" placeholder="Enter address"/>
-                </div>
-                <c if test="${not empty addressError}">
-                        ${addressError}
-                </c>
+        </div>
 
+        <div class="control-group" id="houseaddress">
+
+            <label class="control-label">Address: *</label>
+            <div class="controls">
+                <sf:input path="address" type="text" placeholder="Enter address"/>
+            </div>
+            <c if test="${not empty addressError}">
+                ${addressError}
+            </c>
+
+        </div>
+
+        <div class="control-group" id="zipcode">
+
+            <label class="control-label">Location: *</label>
+            <div class="controls">
+                <sf:input path="location" type="text" placeholder="Enter location"/>
             </div>
 
-            <div class="control-group" id="zipcode">
+            <c if test="${not empty locationError}">
+                ${locationError}
+            </c>
 
-                <label class="control-label">Location: *</label>
-                <div class="controls">
-                    <sf:input path="location" type="text" placeholder="Enter location"/>
-                </div>
+        </div>
 
-                <c if test="${not empty locationError}">
-                        ${locationError}
-                </c>
-
-            </div>
         <div class="control-group">
             <label class="control-label">
                 Short Description:
@@ -96,19 +95,24 @@
         </div>
 
         <div class="control-group">
+
             <label class="control-label">
                 Long Description:
             </label>
+
             <div class="controls">
                 <sf:textarea path="longDescription" type="text" placeholder="Enter long description"/>
             </div>
+
         </div>
-            <div class="control-group" id="rating">
-                <label class="control-label">Rating: * (Between 1 and 5)</label>
-                <div class="controls">
-                    <sf:input path="rating" type="number"  value="1" step="0.5" min="1.0" max="5.0"/>
-                </div>
+
+        <div class="control-group" id="rating">
+            <label class="control-label">Rating: * (Between 1 and 5)</label>
+            <div class="controls">
+                <sf:input path="rating" type="number"  value="1" step="0.5" min="1.0" max="5.0"/>
             </div>
+        </div>
+
         <div class="control-group">
             <label class="control-label">
                 Link to homepage:
@@ -119,13 +123,11 @@
         </div>
 
 
-
-
         <input type="submit" VALUE="Add new restaurant" id="addRestaurant"/>
-    </div>
-    </sf:form>
 
-</div></div>
+        </sf:form>
+    </div>
+
 <!-- Footer -->
 <footer id="footer">
     <ul class="menu">

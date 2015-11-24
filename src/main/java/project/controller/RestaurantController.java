@@ -130,12 +130,15 @@ public class RestaurantController {
             return "restaurants/NewRestaurant";
         }
 
+        // If we have no errors we save the restaurant and go to restaurants page
         else{
             // Save the restaurant passed in from the form
             restaurantService.save(restaurant);
 
             // Add a new restaurant to the model
             model.addAttribute("restaurant", new Restaurant());
+
+            model.addAttribute("confirmation", "Your restaurant has been added to the system");
 
             // Return the view
             return "restaurants/NewRestaurant";
