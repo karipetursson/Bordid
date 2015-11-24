@@ -26,16 +26,13 @@ public class Restaurant {
     @NotEmpty
     private String location;
 
-    @Max(5)
     private double rating;
 
     @NotEmpty
     private String shortDescription;
 
-    @NotEmpty
     private String longDescription;
 
-    @NotEmpty
     private String linkToHomepage;
 
     // Notice the empty constructor, because we need to be able to create an empty PostitNote to add

@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import project.persistence.entities.Restaurant;
 import project.service.RestaurantService;
-
 import javax.validation.Valid;
-import java.util.List;
 
 /**
  * Created by IngviÞór on 27/10/2015.
@@ -110,9 +108,26 @@ public class RestaurantController {
     @RequestMapping(value = "/addNewRestaurant", method = RequestMethod.POST)
     public String addViewPost(Model model, @Valid @ModelAttribute("restaurant") Restaurant restaurant, BindingResult result){
 
+        // Send error messages to view
         if(result.hasErrors()){
+
+            if(restaurant.getName().isEmpty()){
+                model.addAttribute("nameError", "*Please enter a name");
+            }
+
+            if(restaurant.getAddress().isEmpty()){
+                model.addAttribute("addressError", "*Please enter an address");
+            }
+
+            if(restaurant.getLocation().isEmpty()){
+                model.addAttribute("locationError", "*Please enter a location");
+            }
+
+            // Add a new restaurant to the model
+            model.addAttribute("restaurant", restaurant);
+
             System.out.println("Grimbill");
-            return "Index";
+            return "restaurants/NewRestaurant";
         }
 
         else{
