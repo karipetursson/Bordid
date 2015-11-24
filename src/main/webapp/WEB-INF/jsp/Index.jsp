@@ -23,8 +23,8 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='../../bootstrap/css/bootstrap.min.css'/> ">
     <link rel="stylesheet" type="text/css" href="<c:url value='../../bootstrap/css/bootstrap-theme.min.css'/> ">
     <link rel="stylesheet" type="text/css" href="<c:url value='../../bootstrap/css/custom.css'/> ">
-
     <link rel="stylesheet" type="text/css" href="<c:url value='../../css/postitnote.css'/> ">
+    <link rel="stylesheet" href="animate.min.css">
 
 </head>
 <body>
@@ -43,7 +43,7 @@
 </header>
 <!-- Banner -->
 <section id="banner">
-    <h2>Borðið</h2>
+    <h2 >Borðið</h2>
     <p>Finnið - Bókið - Borðið</p>
     <ul class="actions">
         <li><a href="#one" class="button " class="more scrolly">Meira</a></li>

@@ -85,7 +85,12 @@
                 <sf:textarea path="longDescription" type="text" placeholder="Enter long description"/>
             </div>
         </div>
-
+            <div class="control-group" id="rating">
+                <label class="control-label">Rating: *</label>
+                <div class="controls">
+                    <sf:input path="rating" type="text" placeholder="Enter rating"/>
+                </div>
+            </div>
         <div class="control-group">
             <label class="control-label">
                 Link to homepage:

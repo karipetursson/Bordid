@@ -66,6 +66,7 @@
 
     </sf:form>
 
+
     <%--Choose what code to generate based on tests that we implement--%>
     <c:choose>
         <%--If the model has an attribute with the name `postitNotes`--%>
@@ -75,7 +76,7 @@
 
                 <c:forEach var="restaurant" items="${restaurants}">
 
-                    <div class="restaurant">
+                    <div class="restaurantWrap">
 
                         <div class="row">
 
