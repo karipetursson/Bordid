@@ -55,7 +55,7 @@
                     <input type="search" placeholder="search" class ="form-control">
 
                     <span class="input-group-btn">
-                        <a href="/restaurants"><button class="btn btn-danger" type="button">Search</button></a>
+                        <button class="btn btn-danger" type="button">Search</button>
                     </span>
                 </div>
                 <!-- /input-group -->
@@ -78,14 +78,15 @@
         <div class="row uniform">
             <div class="4u 12u(narrower)">
                 <section class="box special">
-                    <a href="/restaurants/top"><i class="icon major fa-user"></i></a>
+                    <a href="/restaurants/top"><i class="icon"><img src="../../images/food.jpg" class="image fit"></i></a>
                     <h3>Top 10</h3>
                     <p>Certificate of excellence</p>
                 </section>
             </div>
             <div class="4u 12u(narrower)">
                 <section class="box special">
-                    <i class="icon major fa-tint"></i>
+
+                    <i class="icon"><img src="../../images/bestoffers.jpg" class="image fit"></i>
                     <h3>Best deals in town</h3>
                     <p>Don't think that being more affordable makes it less good</p>
                 </section>
@@ -93,9 +94,9 @@
 
             <div class="4u 12u(narrower)">
                 <section class="box special">
-                    <i class="icon major fa-cog"></i>
-                    <h3>Cousine</h3>
-                    <p>Experience Icelandic cousine.</p>
+                    <i class="icon"> <img src="../../images/cuisine.jpg" class="image fit"</i>
+                    <h3>Cuisine</h3>
+                    <p>Experience Icelandic cuisine.</p>
                 </section>
             </div>
         </div>
