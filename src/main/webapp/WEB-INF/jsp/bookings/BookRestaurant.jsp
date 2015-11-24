@@ -55,7 +55,7 @@
             <div class="control-group" id="name">
                 <label class="control-label">Restaurant name: *</label>
                 <div class="controls">
-                    <sf:input path="restaurantName" type="text" placeholder="Enter restaurant name" value="${name}"/>
+                    <sf:input path="restaurantName" type="text" readonly="true"  value="${name}"/>
                 </div>
                 <label class="control-label">Full name: *</label>
                 <div class="controls">
@@ -67,10 +67,13 @@
                     <sf:input path="email" type="text" placeholder="Enter your e-mail"/>
                 </div>
 
-                <div class="controls">
+                <div class="control">
                     <script>
                     $(function() {
                         $( "#datepicker" ).datepicker();
+                        inline: true
+                                showOtherMonths: true
+                                dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
                     });
                 </script>
                     Date: <sf:input path="date" type="text" id="datepicker"/>

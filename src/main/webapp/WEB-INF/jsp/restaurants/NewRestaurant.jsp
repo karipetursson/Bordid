@@ -50,26 +50,42 @@
 
         <sf:form method="POST" commandName="restaurant" action="/addNewRestaurant" id="newRestForm">
 
-        <div class="control-group" id="name">
-            <label class="control-label">Name: *</label>
-            <div class="controls">
-                <sf:input path="name" type="text" placeholder="Enter name"/>
-            </div>
-        </div>
+            <div class="control-group" id="name">
 
-        <div class="control-group" id="houseaddress">
-            <label class="control-label">Address: *</label>
-            <div class="controls">
-                <sf:input path="address" type="text" placeholder="Enter address"/>
-            </div>
-        </div>
+                <label class="control-label">Name: *</label>
+                <div class="controls">
+                    <sf:input path="name" type="text" placeholder="Enter name"/>
+                </div>
+                <c if test="${not empty nameError}">
+                        ${nameError}
+                </c>
 
-        <div class="control-group" id="zipcode">
-            <label class="control-label">Location: *</label>
-            <div class="controls">
-                <sf:input path="location" type="text" placeholder="Enter location"/>
             </div>
-        </div>
+
+            <div class="control-group" id="houseaddress">
+
+                <label class="control-label">Address: *</label>
+                <div class="controls">
+                    <sf:input path="address" type="text" placeholder="Enter address"/>
+                </div>
+                <c if test="${not empty addressError}">
+                        ${addressError}
+                </c>
+
+            </div>
+
+            <div class="control-group" id="zipcode">
+
+                <label class="control-label">Location: *</label>
+                <div class="controls">
+                    <sf:input path="location" type="text" placeholder="Enter location"/>
+                </div>
+
+                <c if test="${not empty locationError}">
+                        ${locationError}
+                </c>
+
+            </div>
         <div class="control-group">
             <label class="control-label">
                 Short Description:
@@ -88,9 +104,9 @@
             </div>
         </div>
             <div class="control-group" id="rating">
-                <label class="control-label">Rating: *</label>
+                <label class="control-label">Rating: * (Between 1 and 5)</label>
                 <div class="controls">
-                    <sf:input path="rating" type="text" placeholder="Enter rating"/>
+                    <sf:input path="rating" type="number"  value="1.0" step="0.5" min="1.0" max="5.0"/>
                 </div>
             </div>
         <div class="control-group">
@@ -98,7 +114,7 @@
                 Link to homepage:
             </label>
             <div class="controls">
-                <sf:input path="linkToHomepage" type="number" placeholder="Enter link to homepage"/>
+                <sf:input path="linkToHomepage" type="text" placeholder="Enter link to homepage"/>
             </div>
         </div>
 
