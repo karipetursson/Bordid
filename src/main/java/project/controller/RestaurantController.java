@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import project.persistence.entities.Restaurant;
 import project.service.RestaurantService;
 
+import java.util.List;
+
 /**
  * Created by IngviÞór on 27/10/2015.
  */
@@ -46,14 +48,29 @@ public class RestaurantController {
     public String restaurantsViewPost(@ModelAttribute("restaurant") Restaurant restaurant,
                               Model model){
 
-        // Get the name from the passed in "dummy" Restaurant object
-        String searchName = restaurant.getName();
+        // Get the searchString from the passed in "dummy" Restaurant object
+        String searchString = restaurant.getName();
 
-        // Use that name to find all restaurants with the same name
-        model.addAttribute("restaurants", restaurantService.findByName(searchName));
+        // Find all restaurants matching the searchString
+        model.addAttribute("restaurants", restaurantService.findByNameOrLocation(searchString, searchString));
 
         // Add a new Restaurant to the model (not sure if we need this)
         model.addAttribute("restaurant", new Restaurant());
+
+        // Return the view
+        return "restaurants/Restaurants";
+    }
+
+    // Method that requests the all restaurants page
+    // Displays all restaurants currently in the database
+    @RequestMapping(value = "/restaurants/top", method = RequestMethod.GET)
+    public String topRestaurantsViewGet(Model model){
+
+        // Add a new Restaurant to the model for the form
+        model.addAttribute("restaurant",new Restaurant());
+
+        // Get all restaurants in alphabetical order
+        model.addAttribute("restaurants",restaurantService.findHigherRatedThan(4.0));
 
         // Return the view
         return "restaurants/Restaurants";

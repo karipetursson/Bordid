@@ -26,6 +26,13 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
     // Find all restaurants with the passed in name
     List<Restaurant> findByName(String name);
 
+    // Find all restaurants with rating higher or equal to 4
+    List<Restaurant> findByRatingGreaterThan(double rating);
+
     // Find a restaurant with the passed in id
     Restaurant findById(Long id);
+
+    List<Restaurant> findByLocation(String name);
+
+    List<Restaurant> findAllByNameOrLocation(String name, String location);
 }

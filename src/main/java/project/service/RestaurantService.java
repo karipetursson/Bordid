@@ -16,5 +16,11 @@ public interface RestaurantService {
 
     List<Restaurant> findByName(String name);
 
+    List<Restaurant> findByLocation(String name);
+
+    List<Restaurant> findByNameOrLocation(String name, String location);
+
+    List<Restaurant> findHigherRatedThan(double rating);
+
     Restaurant findById(Long id);
 }
