@@ -46,7 +46,6 @@
 
 <div class="wrapper style11">
 <sf:form method="POST" commandName="restaurant" action="/restaurants">
-
     <div class="featurette">
         <div class="featurette-inner text-center">
             <form role="form" class="search">
@@ -60,64 +59,36 @@
         </div>
         <!-- /.featurette-inner (display:table-cell) -->
     </div>
-
     </sf:form>
-
-
     <%--Choose what code to generate based on tests that we implement--%>
     <c:choose>
         <%--If the model has an attribute with the name `postitNotes`--%>
         <c:when test="${not empty restaurants}">
-
-            <div>
-
                 <c:forEach var="restaurant" items="${restaurants}">
 
                     <div class="restaurantWrap">
-
                         <div class="row">
                             <div id = "restName">
                                 <h3 id ="restHeading"><a href="/restaurantInfo/${restaurant.id}">${restaurant.name}</a></h3>
                                 <a href="/bookRestaurant/${restaurant.name}"> <input type="submit" VALUE="Book" id="restBook"/></a>
-
                             </div>
-
-
-
-
-
                             <p>${restaurant.address}</p>
-
                             <p id = "location">${restaurant.location}</p>
-
                             <p>${restaurant.shortDescription}</p>
-
-
                         </div>
-
                     </div>
 
-
-
-
-
-
-
-                    </div>
 
                 </c:forEach>
 
+                </c:when>
+                <%--If all tests are false, then do this--%>
+                <c:otherwise>
+                    <h3>We have no restaurants!</h3>
+                </c:otherwise>
+            </c:choose>
+
             </div>
-
-
-
-        </c:when>
-
-        <%--If all tests are false, then do this--%>
-        <c:otherwise>
-            <h3>We have no restaurants!</h3>
-        </c:otherwise>
-    </c:choose>
 </div>
 
 <!-- Footer -->
