@@ -1,6 +1,9 @@
 package project.persistence.entities;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 /**
  * Created by IngviÞór on 27/10/2015.
@@ -13,12 +16,26 @@ public class Restaurant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotEmpty
     private String name;
+
+    @NotEmpty
     private String address;
+
+    @NotEmpty
     private String location;
+
+    @Max(5)
     private double rating;
+
+    @NotEmpty
     private String shortDescription;
+
+    @NotEmpty
     private String longDescription;
+
+    @NotEmpty
     private String linkToHomepage;
 
     // Notice the empty constructor, because we need to be able to create an empty PostitNote to add

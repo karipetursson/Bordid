@@ -3,6 +3,7 @@ package project.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import project.persistence.entities.Restaurant;
 import project.service.RestaurantService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -106,16 +108,22 @@ public class RestaurantController {
 
     // Method that adds the passed in restaurant to the database
     @RequestMapping(value = "/addNewRestaurant", method = RequestMethod.POST)
-    public String addViewPost(@ModelAttribute("restaurant") Restaurant restaurant,
-                                     Model model){
+    public String addViewPost(Model model, @Valid @ModelAttribute("restaurant") Restaurant restaurant, BindingResult result){
 
-        // Save the restaurant passed in from the form
-        restaurantService.save(restaurant);
+        if(result.hasErrors()){
+            System.out.println("Grimbill");
+            return "Index";
+        }
 
-        // Add a new restaurant to the model
-        model.addAttribute("restaurant", new Restaurant());
+        else{
+            // Save the restaurant passed in from the form
+            restaurantService.save(restaurant);
 
-        // Return the view
-        return "restaurants/NewRestaurant";
+            // Add a new restaurant to the model
+            model.addAttribute("restaurant", new Restaurant());
+
+            // Return the view
+            return "restaurants/NewRestaurant";
+        }
     }
 }
