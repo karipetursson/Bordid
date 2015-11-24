@@ -56,9 +56,7 @@
                         <input type="submit" VALUE="Search!" class="btn btn-danger"/>
                     </span>
                 </div>
-                <!-- /input-group -->
             </form>
-            <!-- /.max-width on this form -->
         </div>
         <!-- /.featurette-inner (display:table-cell) -->
     </div>
