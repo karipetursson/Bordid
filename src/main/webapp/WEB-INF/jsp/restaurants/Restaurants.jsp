@@ -79,22 +79,22 @@
                     <div class="restaurantWrap">
 
                         <div class="row">
-
-
                             <div id = "restName">
-
-                                <h3><a href="/restaurantInfo/${restaurant.id}">${restaurant.name}</a></h3>
+                                <h3 id ="restHeading"><a href="/restaurantInfo/${restaurant.id}">${restaurant.name}</a></h3>
+                                <a href="/bookRestaurant/${restaurant.name}"> <input type="submit" VALUE="Book" id="restBook"/></a>
 
                             </div>
 
 
+
+
+
                             <p>${restaurant.address}</p>
 
-                            <p>${restaurant.location}</p>
+                            <p id = "location">${restaurant.location}</p>
 
                             <p>${restaurant.shortDescription}</p>
 
-                            <p><a href="/bookRestaurant/${restaurant.name}">Book this restaurant</a></p>
 
                         </div>
 
