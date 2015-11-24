@@ -103,7 +103,7 @@
 
 
 
-        <input type="submit" VALUE="Add new restaurant"/>
+        <input type="submit" VALUE="Add new restaurant" id="addRestaurant"/>
     </div>
     </sf:form>
 
