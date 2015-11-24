@@ -123,10 +123,10 @@ public class RestaurantController {
                 model.addAttribute("locationError", "*Please enter a location");
             }
 
-            // Add a new restaurant to the model
+            // Add the passed in restaurant to the model
+            // so the information is "saved"
             model.addAttribute("restaurant", restaurant);
 
-            System.out.println("Grimbill");
             return "restaurants/NewRestaurant";
         }
 

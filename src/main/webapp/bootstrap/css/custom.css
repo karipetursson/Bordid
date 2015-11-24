@@ -3967,7 +3967,8 @@ body.landing #page-wrapper {
     }
 
     #skitmix{
-        padding:4em;
+        padding-bottom: 3em;
+        padding-top: 10em;
     }
 
     #restlocation {

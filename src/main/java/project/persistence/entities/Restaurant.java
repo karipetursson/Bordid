@@ -28,7 +28,6 @@ public class Restaurant {
 
     private double rating;
 
-    @NotEmpty
     private String shortDescription;
 
     private String longDescription;
