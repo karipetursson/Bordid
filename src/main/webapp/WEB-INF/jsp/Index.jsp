@@ -67,13 +67,14 @@
 <!-- One -->
 <div id="one" class="wrapper style1">
     <section class="container">
+
         <header class="major">
             <h2>Find a place to eat</h2>
             <p>Want to try a new restaurant in your neighborhood? The capital has many gourmet addresses.
                 To help you find yours, discover the best Icelandic restaurants guide, bistros to the finest gourmet restaurants.
                  <a href="/restaurants">See all restaurants in Iceland.</a> </p>
-
         </header>
+
         <div class="row uniform">
             <div class="4u 12u(narrower)">
                 <section class="box special">
@@ -93,7 +94,7 @@
 
             <div class="4u 12u(narrower)">
                 <section class="box special">
-                    <i class="icon"> <img src="../../images/cuisine.jpg" class="image fit"</i>
+                    <i class="icon"> <img src="../../images/cuisine.jpg" class="image fit"></i>
                     <h3>Cuisine</h3>
                     <p>Experience Icelandic cuisine.</p>
                 </section>
