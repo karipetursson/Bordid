@@ -47,6 +47,9 @@
     </nav>
 </header>
 
+<div class="clearfix">
+
+</div>
 
 <!-- Footer -->
 <footer id="footer">

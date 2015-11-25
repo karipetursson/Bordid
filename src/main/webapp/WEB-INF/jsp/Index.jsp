@@ -36,7 +36,6 @@
             <li><a href="/addNewRestaurant">New Restaurant</a></li>
             <li><a href="/restaurants">Restaurants</a></li>
             <li><a href="/bookings">Bookings</a></li>
-
             <li><a href="/about">About</a></li>
         </ul>
     </nav>
@@ -52,7 +51,7 @@
         <div class="featurette-inner text-center">
             <form role="form" class="search">
                 <div class="input-group input-group-lg">
-                    <input type="search" placeholder="search" class ="form-control">
+                    <input type="search" placeholder="Search for an adventure" class ="form-control">
 
                     <span class="input-group-btn">
                         <button class="btn btn-danger" type="button">Search</button>
@@ -108,7 +107,7 @@
     <section class="container 75%">
         <header class="major">
             <h2>Contact</h2>
-            <p>Bordid is the first destination would be the first destination for a hungry Icelander or a weary traveler looking for something to eat. Contact us for further informations.</p>
+            <p>Bordid is the first destination for a hungry Icelander or a weary traveler looking for and adventure. Contact us for further informations.</p>
         </header>
         <div id="contact" class="box">
             <div class="row uniform">
