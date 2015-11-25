@@ -23,8 +23,8 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='../../bootstrap/css/bootstrap.min.css'/> ">
     <link rel="stylesheet" type="text/css" href="<c:url value='../../bootstrap/css/bootstrap-theme.min.css'/> ">
     <link rel="stylesheet" type="text/css" href="<c:url value='../../bootstrap/css/custom.css'/> ">
-
     <link rel="stylesheet" type="text/css" href="<c:url value='../../css/postitnote.css'/> ">
+    <link rel="stylesheet" href="animate.min.css">
 
 </head>
 <body>
@@ -33,19 +33,17 @@
     <h1><a href="/">Borðið</a></h1>
     <nav id="nav">
         <ul>
-            <li><a href="/">Home</a></li>
-            <li>
-                <a href="#" class="icon fa-angle-down">Page Layouts</a>
-                <ul>
-                    <li><a href="/addNewRestaurant">Add New Restaurant</a></li>
-                    <li><a href="/restaurants">All Restaurants</a></li>
-                    <li><a href="/bookings">Bookings</a></li>
-                </ul>
-            </li>
+            <li><a href="/addNewRestaurant">New Restaurant</a></li>
+            <li><a href="/restaurants">Restaurants</a></li>
+            <li><a href="/bookings">Bookings</a></li>
             <li><a href="/about">About</a></li>
         </ul>
     </nav>
 </header>
+
+<section id="banner">
+
+</section>
 
 
 <!-- Footer -->
