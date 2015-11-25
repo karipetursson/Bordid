@@ -72,23 +72,18 @@
                                 <h3 id ="restHeading"><a href="/restaurantInfo/${restaurant.id}">${restaurant.name}</a></h3>
                                 <a href="/bookRestaurant/${restaurant.name}"> <input type="submit" VALUE="Book" id="restBook"/></a>
                             </div>
-                            <p>${restaurant.address}</p>
-                            <p id = "location">${restaurant.location}</p>
-                            <p>${restaurant.shortDescription}</p>
+                            <p class="restaurantRow"> Address: ${restaurant.address}, ${restaurant.location}</p>
+                            <p class="restaurantRow">${restaurant.shortDescription}</p>
                         </div>
                     </div>
 
-
                 </c:forEach>
-
-                </c:when>
+        </c:when>
                 <%--If all tests are false, then do this--%>
-                <c:otherwise>
-                    <h3>We have no restaurants!</h3>
-                </c:otherwise>
-            </c:choose>
-
-            </div>
+        <c:otherwise>
+            <h3>We have no restaurants!</h3>
+        </c:otherwise>
+    </c:choose>
 </div>
 
 <!-- Footer -->
