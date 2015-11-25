@@ -66,4 +66,9 @@ public class RestaurantServiceImplementation implements RestaurantService {
     public Restaurant findById(Long id){
         return repository.findById(id);
     }
+
+    @Override
+    public List<Restaurant> checkName(String name) {
+        return repository.findByName(name);
+    }
 }

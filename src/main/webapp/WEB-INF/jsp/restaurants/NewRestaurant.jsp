@@ -47,6 +47,10 @@
         <h2>Please enter restaurant details below</h2>
         <p>Fields marked with * must be filled out</p>
 
+        <c if test="${not empty alreadyExistsError}" class="errorMessage">
+                ${alreadyExistsError}
+        </c>
+
         <div class="control-group" id="name">
 
             <label class="control-label">Name: *</label>

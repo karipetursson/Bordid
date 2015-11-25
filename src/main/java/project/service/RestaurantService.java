@@ -23,4 +23,6 @@ public interface RestaurantService {
     List<Restaurant> findHigherRatedThan(double rating);
 
     Restaurant findById(Long id);
+
+    List<Restaurant> checkName(String name);
 }

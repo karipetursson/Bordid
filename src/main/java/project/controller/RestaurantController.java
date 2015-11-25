@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import project.persistence.entities.Restaurant;
 import project.service.RestaurantService;
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * Created by IngviÞór on 27/10/2015.
@@ -108,8 +109,15 @@ public class RestaurantController {
     @RequestMapping(value = "/addNewRestaurant", method = RequestMethod.POST)
     public String addViewPost(Model model, @Valid @ModelAttribute("restaurant") Restaurant restaurant, BindingResult result){
 
+        List<Restaurant> checkList = restaurantService.checkName(restaurant.getName());
+
+        if(checkList.size()>0){
+            model.addAttribute("alreadyExistsError", "This restaurant already exists");
+
+            model.addAttribute("restaurant", new Restaurant());
+        }
         // Send error messages to view
-        if(result.hasErrors()){
+        else if(result.hasErrors()){
 
             if(restaurant.getName().isEmpty()){
                 model.addAttribute("nameError", "*Please enter a name");
@@ -126,8 +134,6 @@ public class RestaurantController {
             // Add the passed in restaurant to the model
             // so the information is "saved"
             model.addAttribute("restaurant", restaurant);
-
-            return "restaurants/NewRestaurant";
         }
 
         // If we have no errors we save the restaurant and go to restaurants page
@@ -139,9 +145,8 @@ public class RestaurantController {
             model.addAttribute("restaurant", new Restaurant());
 
             model.addAttribute("confirmation", "Your restaurant has been added to the system");
-
-            // Return the view
-            return "restaurants/NewRestaurant";
         }
+
+        return "restaurants/NewRestaurant";
     }
 }
