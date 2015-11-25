@@ -70,10 +70,11 @@
                         <div class="row">
                             <div id = "restName">
                                 <h3 id ="restHeading"><a href="/restaurantInfo/${restaurant.id}">${restaurant.name}</a></h3>
-                                <a href="/bookRestaurant/${restaurant.name}"> <input type="submit" VALUE="Book" id="restBook"/></a>
+                                <a href="/bookRestaurant/${restaurant.name}"><input type="submit" VALUE="Book" id="restBook"/></a>
                             </div>
-                            <p class="restaurantRow"> Address: ${restaurant.address}, ${restaurant.location}</p>
-                            <p class="restaurantRow">${restaurant.shortDescription}</p>
+                            <p class="restaurantRow"> Address:  ${restaurant.address}, ${restaurant.location}</p>
+                            <p class="restaurantRow"> Rating: ${restaurant.rating}/5</p>
+                            <p class="restaurantRow"> Description: ${restaurant.shortDescription}</p>
                         </div>
                     </div>
 
