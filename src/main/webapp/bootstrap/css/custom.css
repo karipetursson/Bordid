@@ -83,20 +83,19 @@ p {
 }
 
 label{
-    color: #424242;
-    font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
-    letter-spacing:0.1em;
-    text-align:left;
-    text-transform: lowercase;
-    line-height: 145%;
-    font-size: 1.1em;
-    font-variant: small-caps;
-    display: block;
-    font-weight: normal;
-    margin: 0 auto;
-    margin-top: 1em;
-}
-
+     color: #424242;
+     font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+     letter-spacing:0.1em;
+     text-align:left;
+     text-transform: lowercase;
+     line-height: 145%;
+     font-size: 1.0em;
+     font-variant: small-caps;
+     display: block;
+     font-weight: normal;
+     margin: 0 auto;
+     margin-top: 1em;
+ }
 
 /* Box Model */
 
@@ -1858,7 +1857,7 @@ a {
     -webkit-transition: color 0.2s ease-in-out;
     -ms-transition: color 0.2s ease-in-out;
     transition: color 0.2s ease-in-out;
-    color: #e98b6c;
+    color: #808080;
     text-decoration: underline;
 }
 
@@ -3759,6 +3758,7 @@ body.landing #page-wrapper {
         position: relative;
         padding-right: 99px; /*space for button*/
     }
+
     .featurette .search.has-button .btn {
         position: absolute;
         top: 0;
@@ -3767,7 +3767,7 @@ body.landing #page-wrapper {
         margin: 0;
     }
 
-    #newRestForm{
+    #newRestForm {
         max-width: 75%;
         padding: 19px 29px 29px;
         margin: 0 auto;
@@ -3776,8 +3776,8 @@ body.landing #page-wrapper {
         background-color: #fff;
         border: 1px solid #e5e5e5;
     }
-    form
-    {
+
+    form {
         max-width: 75%;
         padding: 19px 29px 29px;
         margin: 0 auto;
@@ -3785,84 +3785,69 @@ body.landing #page-wrapper {
         /*background-color: #fff;
         border: 1px solid #e5e5e5;*/
 
-
-
         /* Sets the rounded corners*/
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
 
-        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-        -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-        box-shadow: 0 1px 2px rgba(0,0,0,.05);
-
-
-
+        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+        -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
 
     }
 
-    .form-horizontal .control-label
-    {
+    .form-horizontal .control-label {
 
         text-align: left;
     }
 
-    .controls .radio
-    {
+    .controls .radio {
 
         padding: 5px;
 
     }
 
-    #female
-    {
+    #female {
         display: inline-block;
         float: right;
         padding-right: 2em;
     }
 
-    #male
-    {
-        display:inline-block;
+    #male {
+        display: inline-block;
         float: left;
         padding-left: 2em;
     }
 
-    .control-group-check input
-    {
+    .control-group-check input {
         float: left;
     }
 
-    .control-group-check label
-    {
+    .control-group-check label {
         float: left;
         padding-right: 2em;
 
     }
 
-    .control-group-check
-    {
+    .control-group-check {
         margin-bottom: 2em;
 
         overflow: hidden;
     }
 
-    .controls p
-    {
-        display:inline
+    .controls p {
+        display: inline
     }
 
-    textarea
-    {
+    textarea {
         display: inline;
     }
 
-    #result
-    {
+    #result {
         float: right;
     }
 
-    .restaurantRow{
+    .restaurantRow {
         float: left;
         margin: 0 auto;
         padding-bottom: 10px;
@@ -3876,17 +3861,19 @@ body.landing #page-wrapper {
         display: block;
         width: 60%;
         height: 40%;
-        padding:auto;
+        padding: auto;
+        padding-bottom: 2em;
         /*float: left;*/
         overflow: hidden;
         background: #f3f3f3;
         border: 1px solid #fff;
         border-radius: 25px;
 
-        box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-        -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-        -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
+
     #addRestaurant {
         border-top: 1px solid #96d1f8;
         background: #c12e2a;
@@ -3898,10 +3885,10 @@ body.landing #page-wrapper {
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px;
-        -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-        -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-        box-shadow: rgba(0,0,0,1) 0 1px 0;
-        text-shadow: rgba(0,0,0,.4) 0 1px 0;
+        -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+        -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+        box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+        text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
         color: white;
         font-size: 1em;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -3910,21 +3897,23 @@ body.landing #page-wrapper {
         margin: 0 auto;
         margin-top: 2em;
         padding: auto;
-        width:100%;
+        width: 100%;
     }
+
     #addRestaurant:hover {
         border-top-color: #383e42;
         background: #383e42;
         color: #ccc;
     }
+
     #addRestaurant:active {
         border-top-color: #b52828;
         background: #b52828;
     }
 
-   .control-label{
-       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-   }
+    .control-label {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
 
     .ui-datepicker {
         width: 216px;
@@ -3936,11 +3925,13 @@ body.landing #page-wrapper {
         -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
     }
+
     .ui-datepicker a {
         text-decoration: none;
         color: black;
 
     }
+
     .ui-datepicker-header {
         /*background: url('../img/dark_leather.png') repeat 0 0 #000;*/
         color: #dfdfeb;
@@ -3955,9 +3946,11 @@ body.landing #page-wrapper {
         border-style: 2px solid;
         border-color: #111;
     }
+
     .ui-datepicker-title {
         text-align: center;
     }
+
     .ui-datepicker-prev, .ui-datepicker-next {
         display: inline-block;
         width: 30px;
@@ -3973,14 +3966,15 @@ body.landing #page-wrapper {
         float: left;
         background-position: center -30px;
     }
+
     .ui-datepicker-next {
         float: right;
         background-position: center 0px;
 
     }
 
-    #restName{
-        border-bottom:1px solid black;
+    #restName {
+        border-bottom: 1px solid black;
         width: 100%;
         margin: 1em;
         float: left;
@@ -3991,13 +3985,13 @@ body.landing #page-wrapper {
         padding-left: 3.5em;
     }
 
-    #restHeading{
+    #restHeading {
         width: 50%;
-        float:inherit;
+        float: inherit;
     }
 
-    #restBook{
-        float:right;
+    #restBook {
+        float: right;
         margin-right: 3em;
         margin-bottom: 2em;
         margin-top: -1em;
@@ -4007,29 +4001,29 @@ body.landing #page-wrapper {
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 15px;
-        -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-        -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-        box-shadow: rgba(0,0,0,1) 0 1px 0;
-        text-shadow: rgba(0,0,0,.4) 0 1px 0;
+        -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+        -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+        box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+        text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
         color: white;
         font-size: 1em;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         text-decoration: none;
         /*margin: 0 auto;
         margin-top: 2em;*/
-        width:15%;
+        width: 15%;
     }
 
-    #skitmix{
+    #skitmix {
         padding-bottom: 3em;
         padding-top: 10em;
     }
 
     #restlocation {
-        padding:1em;
+        padding: 1em;
     }
 
-    #bookingSearch{
+    #bookingSearch {
         text-align: center;
     }
 
@@ -4042,11 +4036,12 @@ body.landing #page-wrapper {
         filter: dropshadow(color=#fff, offx=1, offy=0);
     }
 
-    .clearfix{
+    .clearfix {
         overflow: auto;
         zoom: 1;
     }
-    .control.date{
+
+    .control.date {
         text-transform: uppercase;
         letter-spacing: 1px;
         color: #bbb;
@@ -4054,6 +4049,48 @@ body.landing #page-wrapper {
         font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
         font-weight: 100;
     }
- }
 
+    .restInfo {
+        margin-left: 2em;
+        float: left;
+    }
+
+    .pInfo {
+        color: #424242;
+        font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+        letter-spacing: 0.1em;
+        text-align: left;
+        margin-top: 5em;
+        margin: 0 auto;
+        text-transform: lowercase;
+        line-height: 145%;
+        font-size: 1.5em;
+        font-variant: small-caps;
+    }
+
+    .pDescription {
+        color: #424242;
+        font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+        letter-spacing: 0.1em;
+        text-align: center;
+        margin-top: 2em;
+        margin-right: 2em;
+        /*margin: 40px auto;*/
+        text-transform: lowercase;
+        line-height: 145%;
+        font-size: 1.2em;
+        font-variant: small-caps;
+
+    }.pDescription1 {
+         color: #424242;
+         font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+         letter-spacing: 0.1em;
+         /*text-align: center;*/
+         margin-top: 1em;
+         /*margin: 40px auto;*/
+         font-size: 1.0em;
+         font-variant: small-caps;
+
+     }
+}
 
