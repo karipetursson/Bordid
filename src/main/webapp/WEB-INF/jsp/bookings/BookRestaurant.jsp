@@ -52,6 +52,10 @@
     <div>
         <sf:form method="POST" commandName="booking" action="/bookRestaurant" id="newRestForm">
 
+            <c if test="${not empty confirmation}" class="errorMessage">
+                    ${confirmation} ${bookedName}
+            </c>
+
             <div class="control-group" id="name">
 
                 <label class="control-label">Restaurant name: *</label>

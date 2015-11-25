@@ -20,6 +20,11 @@
     color: red;
 }
 
+.slogan{
+    color: blue;
+    padding-bottom: 2em;
+}
+
 
 
 @import url("font-awesome.min.css");
@@ -3120,7 +3125,7 @@ body.landing #page-wrapper {
 }
 
 #banner p {
-    color: #e98b6c;
+    color: #fff;
     font-size: 2em;
     margin-bottom: 1.75em;
 }

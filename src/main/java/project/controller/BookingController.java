@@ -86,11 +86,15 @@ public class BookingController {
             // Save the passed in booking
             bookingService.save(booking);
 
+            model.addAttribute("confirmation", "You have booked a table at ");
+
+            model.addAttribute("bookedName", booking.getRestaurantName());
+
             // Add the passed in booking to the model again
-            model.addAttribute("booking", booking);
+            model.addAttribute("booking", new Booking());
 
             // Return the view
-            return "bookings/BookingConfirmed";
+            return "bookings/BookRestaurant";
         }
     }
 

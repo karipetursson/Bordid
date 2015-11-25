@@ -43,10 +43,7 @@
 <!-- Banner -->
 <section id="banner">
     <h2 >Borðið</h2>
-    <p>Finnið - Bókið - Borðið</p>
-    <ul class="actions">
-        <li><a href="#one" class="button " class="more scrolly">Meira</a></li>
-    </ul>
+    <p class="slogan">Finnið - Bókið - Borðið</p>
     <div class="featurette">
         <div class="featurette-inner text-center">
             <form role="form" class="search">
