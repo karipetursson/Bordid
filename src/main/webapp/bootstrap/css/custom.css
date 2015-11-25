@@ -74,9 +74,26 @@ p {
     margin: 40px auto;
     text-transform: lowercase;
     line-height: 145%;
-    font-size: 14pt;
+    font-size: 1.5em;
     font-variant: small-caps;
 }
+
+label{
+    color: #424242;
+    font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+    letter-spacing:0.1em;
+    text-align:left;
+    text-transform: lowercase;
+    line-height: 145%;
+    font-size: 1.1em;
+    font-variant: small-caps;
+    display: block;
+    font-weight: normal;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+
+
 /* Box Model */
 
 *, *:before, *:after {
@@ -2037,15 +2054,7 @@ form {
     margin: 0 0 2em 0;
 }
 
-label {
-    color: #555555;
-    display: block;
-    font-family: Helvetica;
-    font-size: 0.8em;
-    font-weight: 600;
-    margin: 0 auto;
-    margin-top: 1em;
-}
+
 
 input[type="text"],
 input[type="password"],
@@ -2198,6 +2207,13 @@ input[type="radio"] + label:before {
 ::-webkit-input-placeholder {
     color: #aaa !important;
     opacity: 1.0;
+    font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+
+    text-align:left;
+    text-transform: lowercase;
+    line-height: 145%;
+    font-size: 1.2em;
+    font-variant: small-caps;
 }
 
 :-moz-placeholder {

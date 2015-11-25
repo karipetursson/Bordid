@@ -44,7 +44,7 @@
 
     <sf:form method="POST" commandName="restaurant" action="/addNewRestaurant" id="newRestForm">
 
-        <h3>Please enter restaurant details below</h3>
+        <h1>Please enter restaurant details below</h1>
         <p>Fields marked with * must be filled out</p>
 
         <div class="control-group" id="name">
