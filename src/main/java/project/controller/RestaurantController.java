@@ -70,7 +70,7 @@ public class RestaurantController {
         model.addAttribute("restaurant",new Restaurant());
 
         // Get all restaurants in alphabetical order
-        model.addAttribute("restaurants",restaurantService.findHigherRatedThan(4.0));
+        model.addAttribute("restaurants",restaurantService.findHigherRatedThan(3.9));
 
         // Return the view
         return "restaurants/Restaurants";

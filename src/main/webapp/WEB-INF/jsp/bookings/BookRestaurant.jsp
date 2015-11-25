@@ -95,7 +95,7 @@
 
             </div>
 
-    <input type="submit" VALUE="Book a table"/>
+    <input type="submit" VALUE="Book a table" id="addRestaurant"/>
 
 </sf:form>
     </div>
