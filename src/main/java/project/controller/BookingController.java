@@ -65,15 +65,15 @@ public class BookingController {
         if(result.hasErrors()) {
 
             if(booking.getCustomerName() == "") {
-                model.addAttribute("customerNameError", "Please enter a name");
+                model.addAttribute("customerNameError", "*Please enter a name");
             }
 
             if(booking.getEmail() == "") {
-                model.addAttribute("emailError", "Please enter email");
+                model.addAttribute("emailError", "*Please enter email");
             }
 
             if(booking.getDate() == "") {
-                model.addAttribute("dateError", "Please select date");
+                model.addAttribute("dateError", "*Please select date");
             }
 
             model.addAttribute("booking", booking);

@@ -16,6 +16,10 @@
     margin: 10px;
 }
 
+.errorMessage{
+    color: red;
+}
+
 
 
 @import url("font-awesome.min.css");
@@ -2775,6 +2779,7 @@ input[type="button"]:disabled,
 
 .wrapper.style11 {
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #F5F5F5), color-stop(100, #3A3347));
+    min-height: 40em;
 }
 
 .wrapper.style111 {

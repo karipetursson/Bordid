@@ -53,19 +53,29 @@
         <sf:form method="POST" commandName="booking" action="/bookRestaurant" id="newRestForm">
 
             <div class="control-group" id="name">
+
                 <label class="control-label">Restaurant name: *</label>
                 <div class="controls">
                     <sf:input path="restaurantName" type="text" readonly="true"  value="${name}"/>
                 </div>
+
                 <label class="control-label">Full name: *</label>
                 <div class="controls">
                     <sf:input path="customerName" type="text" placeholder="Enter full name"/>
                 </div>
 
+                <c if test="${not empty customerNameError}" class="errorMessage">
+                        ${customerNameError}
+                </c>
+
                 <label class="control-label">Email: *</label>
                 <div class="controls">
                     <sf:input path="email" type="text" placeholder="Enter your e-mail"/>
                 </div>
+
+                <c if test="${not empty emailError}" class="errorMessage">
+                        ${emailError}
+                </c>
 
                 <div class="control date">
                     <script>
@@ -78,6 +88,11 @@
                 </script>
                     Date: <sf:input path="date" type="text" id="datepicker"/>
                 </div>
+
+                <c if test="${not empty dateError}" class="errorMessage">
+                        ${dateError}
+                </c>
+
             </div>
 
     <input type="submit" VALUE="Book a table"/>

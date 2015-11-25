@@ -36,7 +36,6 @@
     <h1><a href="/">Borðið</a></h1>
     <nav id="nav">
         <ul>
-            <li><a href="/">Home</a></li>
             <li><a href="/addNewRestaurant">New Restaurant</a></li>
             <li><a href="/restaurants">Restaurants</a></li>
             <li><a href="/bookings">Bookings</a></li>

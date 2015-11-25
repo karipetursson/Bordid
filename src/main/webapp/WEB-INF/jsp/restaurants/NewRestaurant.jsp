@@ -54,7 +54,7 @@
                 <sf:input path="name" type="text" placeholder="Enter name"/>
             </div>
 
-            <c if test="${not empty nameError}">
+            <c if test="${not empty nameError}" class="errorMessage">
                 ${nameError}
             </c>
 
@@ -66,7 +66,7 @@
             <div class="controls">
                 <sf:input path="address" type="text" placeholder="Enter address"/>
             </div>
-            <c if test="${not empty addressError}">
+            <c if test="${not empty addressError}" class="errorMessage">
                 ${addressError}
             </c>
 
@@ -79,7 +79,7 @@
                 <sf:input path="location" type="text" placeholder="Enter location"/>
             </div>
 
-            <c if test="${not empty locationError}">
+            <c if test="${not empty locationError}" class="errorMessage">
                 ${locationError}
             </c>
 

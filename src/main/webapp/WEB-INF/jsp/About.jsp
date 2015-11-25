@@ -41,9 +41,9 @@
     </nav>
 </header>
 
-<section id="banner">
-
-</section>
+<div class="wrapper style11">
+    
+</div>
 
 
 <!-- Footer -->
