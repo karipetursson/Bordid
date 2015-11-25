@@ -4030,7 +4030,14 @@ body.landing #page-wrapper {
         overflow: auto;
         zoom: 1;
     }
-
+    .control.date{
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #bbb;
+        font-size: 0.8em;
+        font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+        font-weight: 100;
+    }
  }
 
 

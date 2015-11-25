@@ -67,7 +67,7 @@
                     <sf:input path="email" type="text" placeholder="Enter your e-mail"/>
                 </div>
 
-                <div class="control">
+                <div class="control date">
                     <script>
                     $(function() {
                         $( "#datepicker" ).datepicker();
