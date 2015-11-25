@@ -3,12 +3,15 @@ package project.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import project.persistence.entities.Booking;
 import project.service.BookingService;
+
+import javax.validation.Valid;
 
 /**
  * Created by IngviÞór on 27/10/2015.
@@ -56,18 +59,39 @@ public class BookingController {
 
 
     // Method that adds a booking to the database and returns confirmation view
-    @RequestMapping(value = "/bookingConfirmation", method = RequestMethod.POST)
-    public String bookingConfirmationViewGet(@ModelAttribute("booking") Booking booking,
-                                   Model model){
+    @RequestMapping(value = "/bookRestaurant", method = RequestMethod.POST)
+    public String bookingConfirmationViewGet(Model model,@Valid @ModelAttribute("booking") Booking booking, BindingResult result){
 
-        // Save the passed in booking
-        bookingService.save(booking);
+        if(result.hasErrors()) {
 
-        // Add the passed in booking to the model again
-        model.addAttribute("booking", booking);
+            if(booking.getCustomerName() == "") {
+                model.addAttribute("customerNameError", "Please enter a name");
+            }
 
-        // Return the view
-        return "bookings/BookingConfirmed";
+            if(booking.getEmail() == "") {
+                model.addAttribute("emailError", "Please enter email");
+            }
+
+            if(booking.getDate() == "") {
+                model.addAttribute("dateError", "Please select date");
+            }
+
+            model.addAttribute("booking", booking);
+
+            return "bookings/BookRestaurant";
+        }
+
+        else {
+
+            // Save the passed in booking
+            bookingService.save(booking);
+
+            // Add the passed in booking to the model again
+            model.addAttribute("booking", booking);
+
+            // Return the view
+            return "bookings/BookingConfirmed";
+        }
     }
 
     // Method that returns a view to book the currently selected restaurant

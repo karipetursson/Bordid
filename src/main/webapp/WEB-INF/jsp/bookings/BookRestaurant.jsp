@@ -50,7 +50,7 @@
 
 <div class="wrapper style11">
     <div>
-        <sf:form method="POST" commandName="booking" action="/bookingConfirmation" id="newRestForm">
+        <sf:form method="POST" commandName="booking" action="/bookRestaurant" id="newRestForm">
 
             <div class="control-group" id="name">
                 <label class="control-label">Restaurant name: *</label>

@@ -1,5 +1,7 @@
 package project.persistence.entities;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
 
 /**
@@ -13,9 +15,14 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotEmpty
     private String restaurantName;
+    @NotEmpty
     private String customerName;
+    @NotEmpty
     private String email;
+    @NotEmpty
     private String date;
 
     // Notice the empty constructor, because we need to be able to create an empty PostitNote to add
